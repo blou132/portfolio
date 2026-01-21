@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Professionnel</title>
+    <link rel="shortcut icon" href="images/logo.ico" type="icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="theme-dark" data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="100" tabindex="0">
+<nav class="navbar navbar-expand-lg navbar-dark cosmic-nav fixed-top" id="site-nav">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#top">
+            <span class="brand-mark">P</span>
+            <span>Mon Portfolio</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Ouvrir le menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#about">À propos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projets</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Compétences</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="downloads/cv.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-arrow-down"></i> CV</a></li>
+            </ul>
+            <button id="theme-toggle" class="btn btn-outline-light ms-3" title="Changer le thème" aria-label="Changer le thème">
+                <i class="bi bi-moon"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<header id="top" class="hero text-center text-white">
+    <div class="container position-relative">
+        <p class="hero-eyebrow text-uppercase">BTS SIO SLAM - 2e année</p>
+        <h1>Bienvenue sur mon portfolio</h1>
+        <p class="hero-lead">Étudiant en BTS SIO, je travaille sur deux projets concrets : TPFormula1 (PHP/MySQL) et JMI 56 (Laravel).</p>
+        <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
+            <a class="btn btn-primary btn-projet" href="#projects"><i class="bi bi-rocket-takeoff me-2"></i>Voir mes projets</a>
+            <a class="btn btn-outline-light" href="#contact"><i class="bi bi-envelope me-2"></i>Me contacter</a>
+        </div>
+        <ul class="hero-meta list-inline mt-4">
+            <li class="list-inline-item"><i class="bi bi-code-slash me-2"></i>TPFormula1 (PHP/MySQL)</li>
+            <li class="list-inline-item"><i class="bi bi-diagram-3 me-2"></i>JMI 56 (Laravel)</li>
+            <li class="list-inline-item"><i class="bi bi-database me-2"></i>Projet BTS en équipe</li>
+        </ul>
+    </div>
+</header>
+
+<main>
+    <section id="about" class="section-block">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-kicker">À propos</p>
+                <h2 class="section-title">Étudiant BTS SIO, passionné par le développement</h2>
+                <p class="section-desc">En 2e année de BTS SIO, je réalise un projet solo (TPFormula1) et un projet en équipe (JMI 56) avec Maxime, mon camarade de classe. Son GitHub : <a href="https://github.com/obSSi" target="_blank" rel="noopener">obSSi</a>.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="glass-card">
+                        <h5 class="mb-3">Ce que je pratique</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li class="d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-primary"></i><span>TPFormula1 : application PHP (MVC léger) pour gérer Grands Prix, écuries et pilotes.</span></li>
+                            <li class="d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-primary"></i><span>JMI 56 : site Laravel pour réparateur informatique avec formulaire et espace admin.</span></li>
+                            <li class="d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-primary"></i><span>MySQL, authentification, gestion de données et interface responsive.</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="glass-card highlight-card">
+                        <p class="text-uppercase small mb-2 text-muted">En bref</p>
+                        <div class="d-flex flex-column gap-3">
+                            <div>
+                                <p class="stat-number mb-0">Projet solo</p>
+                                <p class="mb-0 text-muted">TPFormula1 (PHP/MySQL)</p>
+                            </div>
+                            <div>
+                                <p class="stat-number mb-0">Projet en équipe</p>
+                                <p class="mb-0 text-muted">JMI 56 avec Maxime</p>
+                            </div>
+                            <div>
+                                <p class="stat-number mb-0">Stack</p>
+                                <p class="mb-0 text-muted">PHP 8.3, Laravel 12, MySQL</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section-block">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-kicker">Projets</p>
+                <h2 class="section-title">Mes projets BTS</h2>
+                <p class="section-desc">Deux projets concrets réalisés en solo et en équipe.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <article class="project-card glass-card h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge rounded-pill text-bg-dark">PHP / MySQL</span>
+                            <span class="project-status">Projet solo</span>
+                        </div>
+                        <h5>TPFormula1 - Gestion F1</h5>
+                        <p>Application PHP MVC pour gérer Grands Prix, écuries et pilotes, avec tableau de bord et authentification.</p>
+                        <div class="tags mb-3">
+                            <span>MVC léger</span><span>CRUD</span><span>Auth</span>
+                        </div>
+                        <a href="projet1.html" class="btn btn-primary btn-projet w-100">Voir le projet</a>
+                    </article>
+                </div>
+                <div class="col-md-6">
+                    <article class="project-card glass-card h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge rounded-pill text-bg-dark">Laravel 12</span>
+                            <span class="project-status">Projet en équipe</span>
+                        </div>
+                        <h5>JMI 56 - Site pour réparateur</h5>
+                        <p>Site responsive avec formulaire de contact, espace admin et carte Google Maps pour un réparateur informatique.</p>
+                        <div class="tags mb-3">
+                            <span>Laravel</span><span>MySQL</span><span>Admin</span>
+                        </div>
+                        <a href="projet2.html" class="btn btn-primary btn-projet w-100">Voir le projet</a>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section-block">
+        <div class="container">
+            <div class="section-header text-center">
+                <p class="section-kicker">Compétences</p>
+                <h2 class="section-title">Ce que j'utilise au quotidien</h2>
+            </div>
+            <div class="row g-3">
+                <div class="col-6 col-md-3">
+                    <div class="skill-card text-center glass-card h-100">
+                        <i class="bi bi-code-slash"></i>
+                        <h6>Front-end</h6>
+                        <p class="mb-0 text-muted">HTML, CSS, JS, Bootstrap</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="skill-card text-center glass-card h-100">
+                        <i class="bi bi-server"></i>
+                        <h6>Back-end</h6>
+                        <p class="mb-0 text-muted">PHP 8.3, Laravel 12, MVC</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="skill-card text-center glass-card h-100">
+                        <i class="bi bi-database"></i>
+                        <h6>Bases de données</h6>
+                        <p class="mb-0 text-muted">SQL, MySQL, modélisation</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="skill-card text-center glass-card h-100">
+                        <i class="bi bi-check2-circle"></i>
+                        <h6>Qualité & outils</h6>
+                        <p class="mb-0 text-muted">Tests Laravel, Git, bonnes pratiques</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-block">
+        <div class="container">
+            <div class="section-header text-center">
+                <p class="section-kicker">Contact</p>
+                <h2 class="section-title">Discutons de votre projet</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="glass-card">
+                        <form action="https://formspree.io/f/your_id" method="POST" class="row g-3">
+                            <div class="col-12 col-md-6">
+                                <input name="name" class="form-control" placeholder="Votre nom" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <input name="email" type="email" class="form-control" placeholder="Votre email" required>
+                            </div>
+                            <div class="col-12">
+                                <textarea name="message" class="form-control" placeholder="Votre message" rows="4" required></textarea>
+                            </div>
+                            <div class="col-12 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                                <span class="text-muted">Je réponds rapidement.</span>
+                                <button type="submit" class="btn btn-primary">Envoyer</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<button id="back-to-top" class="btn-to-top" type="button" aria-label="Retour en haut"><i class="bi bi-arrow-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
