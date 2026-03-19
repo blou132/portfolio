@@ -7,7 +7,20 @@ if (backToTop) {
     toggleBackToTop();
 }
 
-// Thème clair/sombre
+// Compatibilite: anciens hashes anglais -> ancres francaises.
+const hashMap = {
+    '#about': '#a-propos',
+    '#journey': '#parcours',
+    '#projects': '#projets',
+    '#skills': '#competences',
+};
+const mappedHash = hashMap[window.location.hash];
+if (mappedHash) {
+    history.replaceState(null, '', mappedHash);
+    document.querySelector(mappedHash)?.scrollIntoView();
+}
+
+// Theme clair/sombre
 const toggleBtn = document.getElementById('theme-toggle');
 const themeIcon = toggleBtn?.querySelector('i');
 const themeKey = 'preferred-theme';

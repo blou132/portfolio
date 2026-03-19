@@ -1,4 +1,4 @@
-# Portfolio
+﻿# Portfolio
 
 Site portfolio statique (HTML, CSS, JS).
 
@@ -46,7 +46,8 @@ Pour arreter le serveur: `Ctrl + C`
 ## Structure du projet
 
 - `index.html`: page principale
-- `projet1/index.html`, `projet2/index.html`, `projet3/index.html`: pages de details projets
+- `projet-tpformula1/index.html`, `projet-jmi56/index.html`, `projet-java-poo/index.html`: pages de details projets (clean URL FR)
+- `projet1/index.html`, `projet2/index.html`, `projet3/index.html`: anciennes routes conservees pour compatibilite
 - `style.css`: styles globaux
 - `main.js`: interactions (theme, retour en haut)
 - `images/`: logos et images
@@ -61,9 +62,14 @@ Pour arreter le serveur: `Ctrl + C`
 ## Notes
 
 - URLs propres activees:
-  - `http://localhost:3000/projet1/`
-  - `http://localhost:3000/projet2/`
-  - `http://localhost:3000/projet3/`
+  - `http://localhost:3000/projet-tpformula1/`
+  - `http://localhost:3000/projet-jmi56/`
+  - `http://localhost:3000/projet-java-poo/`
+- Ancres propres en francais:
+  - `http://localhost:3000/#a-propos`
+  - `http://localhost:3000/#parcours`
+  - `http://localhost:3000/#projets`
+  - `http://localhost:3000/#competences`
 - Le formulaire de contact dans `index.html` utilise Formspree.
 - Pense a remplacer `https://formspree.io/f/your_id` par ton vrai identifiant Formspree.
 
@@ -89,3 +95,4 @@ Pour arreter le serveur: `Ctrl + C`
 2. Ouvre `http://localhost:3000`
 3. Verifie que les pages projets, le theme et les icones Bootstrap fonctionnent
 4. Ouvre la console navigateur: pas d'erreur CSP
+
