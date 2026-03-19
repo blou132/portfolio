@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; script-src 'self' https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; object-src 'none'; base-uri 'self';">
+    <meta name="referrer" content="no-referrer">
     <title>Bienvenue sur mon portfolio</title>
     <link rel="icon" href="images/logo.png" type="image/png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body class="theme-dark" data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="100" tabindex="0">
 <nav class="navbar navbar-expand-lg navbar-dark cosmic-nav fixed-top" id="site-nav">
     <div class="container">
@@ -25,13 +26,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#about">À propos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">A propos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#journey">Parcours</a></li>
                 <li class="nav-item"><a class="nav-link" href="#projects">Projets</a></li>
-                <li class="nav-item"><a class="nav-link" href="#skills">Compétences</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Competences</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="downloads/cv.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-arrow-down"></i> CV</a></li>
+                <li class="nav-item"><a class="nav-link" href="downloads/cv.pdf" target="_blank" rel="noopener noreferrer"><i class="bi bi-file-earmark-arrow-down"></i> CV</a></li>
             </ul>
-            <button id="theme-toggle" class="btn btn-outline-light ms-3" title="Changer le thème" aria-label="Changer le thème">
+            <button id="theme-toggle" class="btn btn-outline-light ms-3" title="Changer le theme" aria-label="Changer le theme">
                 <i class="bi bi-moon"></i>
             </button>
         </div>
@@ -40,18 +42,25 @@
 
 <header id="top" class="hero text-center text-white">
     <div class="container position-relative">
-        <p class="hero-eyebrow text-uppercase">BTS SIO SLAM - 2e année</p>
-        <h1>Bienvenue sur mon portfolio</h1>
-        <p class="hero-lead">Étudiant en BTS SIO, je travaille sur deux projets concrets : TPFormula1 (PHP/MySQL) et JMI 56 (Laravel).</p>
+        <p class="hero-eyebrow text-uppercase">BTS SIO SLAM - 2e annee</p>
+        <h1>Portfolio de developpement web</h1>
+        <p class="hero-lead">Etudiant en BTS SIO, je construis des applications PHP et Laravel orientees metier, avec une base SQL propre, une interface responsive et un interet fort pour la cybersecurite.</p>
         <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
             <a class="btn btn-primary btn-projet" href="#projects"><i class="bi bi-rocket-takeoff me-2"></i>Voir mes projets</a>
             <a class="btn btn-outline-light" href="#contact"><i class="bi bi-envelope me-2"></i>Me contacter</a>
         </div>
-        <ul class="hero-meta list-inline mt-4">
+        <ul class="hero-meta list-inline mt-4 mb-4">
             <li class="list-inline-item"><i class="bi bi-code-slash me-2"></i>TPFormula1 (PHP/MySQL)</li>
             <li class="list-inline-item"><i class="bi bi-diagram-3 me-2"></i>JMI 56 (Laravel)</li>
-            <li class="list-inline-item"><i class="bi bi-database me-2"></i>Projet BTS en équipe</li>
+            <li class="list-inline-item"><i class="bi bi-cup-hot me-2"></i>Exercices Java POO</li>
+            <li class="list-inline-item"><i class="bi bi-shield-lock me-2"></i>Objectif Cybersecurite</li>
         </ul>
+        <div class="hero-highlights">
+            <span class="highlight-pill"><i class="bi bi-folder2-open me-2"></i>3 projets presentes</span>
+            <span class="highlight-pill"><i class="bi bi-person-workspace me-2"></i>Solo + equipe</span>
+            <span class="highlight-pill"><i class="bi bi-check2-circle me-2"></i>Approche pratique</span>
+            <span class="highlight-pill"><i class="bi bi-mortarboard me-2"></i>Licence puis Master Cyber</span>
+        </div>
     </div>
 </header>
 
@@ -59,40 +68,77 @@
     <section id="about" class="section-block">
         <div class="container">
             <div class="section-header">
-                <p class="section-kicker">À propos</p>
-                <h2 class="section-title">Étudiant BTS SIO, passionné par le développement</h2>
-                <p class="section-desc">En 2e année de BTS SIO, je réalise un projet solo (TPFormula1) et un projet en équipe (JMI 56) avec Maxime, mon camarade de classe. Son GitHub : <a href="https://github.com/obSSi" target="_blank" rel="noopener">obSSi</a>.</p>
+                <p class="section-kicker">A propos</p>
+                <h2 class="section-title">Un profil structure autour de projets concrets</h2>
+                <p class="section-desc">Je suis en BTS SIO (option SLAM) et je renforce mes competences avec un projet solo, un projet en equipe et des travaux pratiques en Java. Mon objectif: poursuivre en licence cybersecurite puis viser un master.</p>
             </div>
             <div class="row g-4">
-                <div class="col-lg-8">
-                    <div class="glass-card">
-                        <h5 class="mb-3">Ce que je pratique</h5>
-                        <ul class="list-unstyled mb-0">
-                            <li class="d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-primary"></i><span>TPFormula1 : application PHP (MVC léger) pour gérer Grands Prix, écuries et pilotes.</span></li>
-                            <li class="d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-primary"></i><span>JMI 56 : site Laravel pour réparateur informatique avec formulaire et espace admin.</span></li>
-                            <li class="d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-primary"></i><span>MySQL, authentification, gestion de données et interface responsive.</span></li>
+                <div class="col-lg-7">
+                    <article class="glass-card h-100">
+                        <h5 class="mb-3">Ce que je fais aujourd'hui</h5>
+                        <ul class="list-unstyled info-list mb-0">
+                            <li><i class="bi bi-check-circle-fill text-primary"></i><span>Concevoir des applications web PHP avec architecture claire (MVC leger), authentification et CRUD.</span></li>
+                            <li><i class="bi bi-check-circle-fill text-primary"></i><span>Developper avec Laravel 12 un site metier avec formulaire, zone admin et gestion des statuts.</span></li>
+                            <li><i class="bi bi-check-circle-fill text-primary"></i><span>Pratiquer SQL/MySQL, modelisation de donnees et integration front responsive avec Bootstrap.</span></li>
+                            <li><i class="bi bi-check-circle-fill text-primary"></i><span>Monter en competence sur la securite web: controle des acces, validation des donnees et bonnes pratiques.</span></li>
                         </ul>
-                    </div>
+                    </article>
                 </div>
-                <div class="col-lg-4">
-                    <div class="glass-card highlight-card">
+                <div class="col-lg-5">
+                    <aside class="glass-card highlight-card h-100">
                         <p class="text-uppercase small mb-2 text-muted">En bref</p>
                         <div class="d-flex flex-column gap-3">
                             <div>
-                                <p class="stat-number mb-0">Projet solo</p>
-                                <p class="mb-0 text-muted">TPFormula1 (PHP/MySQL)</p>
+                                <p class="stat-number mb-0">BTS SIO</p>
+                                <p class="mb-0 text-muted">2e annee - option SLAM</p>
                             </div>
                             <div>
-                                <p class="stat-number mb-0">Projet en équipe</p>
+                                <p class="stat-number mb-0">Projet solo</p>
+                                <p class="mb-0 text-muted">TPFormula1 (PHP / MySQL)</p>
+                            </div>
+                            <div>
+                                <p class="stat-number mb-0">Projet equipe</p>
                                 <p class="mb-0 text-muted">JMI 56 avec Maxime</p>
                             </div>
                             <div>
-                                <p class="stat-number mb-0">Stack</p>
-                                <p class="mb-0 text-muted">PHP 8.3, Laravel 12, MySQL</p>
+                                <p class="stat-number mb-0">Objectif etudes</p>
+                                <p class="mb-0 text-muted">Licence cybersecurite puis Master</p>
                             </div>
                         </div>
-                    </div>
+                    </aside>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="journey" class="section-block section-journey">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-kicker">Parcours</p>
+                <h2 class="section-title">Progression du BTS au concret</h2>
+                <p class="section-desc">Chaque etape du parcours se traduit par un livrable reel: pratique, testable et presente en portfolio.</p>
+            </div>
+            <div class="timeline">
+                <article class="timeline-item glass-card">
+                    <p class="timeline-year">2024</p>
+                    <h5>Debut de formation BTS SIO</h5>
+                    <p class="mb-0 text-muted">Consolidation des bases web, algorithmie et modelisation de donnees.</p>
+                </article>
+                <article class="timeline-item glass-card">
+                    <p class="timeline-year">2025</p>
+                    <h5>TPFormula1 (projet solo)</h5>
+                    <p class="mb-0 text-muted">Application PHP/MySQL avec authentification, tableau de bord et operations CRUD completes.</p>
+                </article>
+                <article class="timeline-item glass-card">
+                    <p class="timeline-year">2026</p>
+                    <h5>JMI 56 + portfolio</h5>
+                    <p class="mb-0 text-muted">Projet Laravel en equipe, suivi des demandes admin, puis documentation et presentation de l'ensemble.</p>
+                </article>
+                <article class="timeline-item glass-card">
+                    <p class="timeline-year">2027+</p>
+                    <h5>Objectif etudes en cybersecurite</h5>
+                    <p class="mb-0 text-muted">Poursuite en licence cybersecurite, puis orientation vers un master pour se specialiser.</p>
+                </article>
             </div>
         </div>
     </section>
@@ -101,36 +147,59 @@
         <div class="container">
             <div class="section-header">
                 <p class="section-kicker">Projets</p>
-                <h2 class="section-title">Mes projets BTS</h2>
-                <p class="section-desc">Deux projets concrets réalisés en solo et en équipe.</p>
+                <h2 class="section-title">Trois projets, trois contextes d'apprentissage</h2>
+                <p class="section-desc">Un projet solo, un projet d'equipe et une serie d'exercices techniques pour renforcer la POO.</p>
             </div>
             <div class="row g-4">
-                <div class="col-md-6">
+                <div class="col-md-6 col-lg-4">
                     <article class="project-card glass-card h-100">
                         <div class="d-flex justify-content-between align-items-center mb-2">
                             <span class="badge rounded-pill text-bg-dark">PHP / MySQL</span>
                             <span class="project-status">Projet solo</span>
                         </div>
                         <h5>TPFormula1 - Gestion F1</h5>
-                        <p>Application PHP MVC pour gérer Grands Prix, écuries et pilotes, avec tableau de bord et authentification.</p>
+                        <p>Application PHP MVC pour gerer Grands Prix, ecuries et pilotes avec tableau de bord et authentification.</p>
                         <div class="tags mb-3">
-                            <span>MVC léger</span><span>CRUD</span><span>Auth</span>
+                            <span>MVC leger</span><span>CRUD</span><span>Auth</span>
                         </div>
-                        <a href="projet1.html" class="btn btn-primary btn-projet w-100">Voir le projet</a>
+                        <div class="d-grid gap-2">
+                            <a href="projet1/" class="btn btn-primary w-100">Voir le projet</a>
+                            <a href="https://github.com/blou132/projet_bts1" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light w-100">Depot GitHub</a>
+                        </div>
                     </article>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 col-lg-4">
                     <article class="project-card glass-card h-100">
                         <div class="d-flex justify-content-between align-items-center mb-2">
                             <span class="badge rounded-pill text-bg-dark">Laravel 12</span>
-                            <span class="project-status">Projet en équipe</span>
+                            <span class="project-status">Projet equipe</span>
                         </div>
-                        <h5>JMI 56 - Site pour réparateur</h5>
-                        <p>Site responsive avec formulaire de contact, espace admin et carte Google Maps pour un réparateur informatique.</p>
+                        <h5>JMI 56 - Site reparateur</h5>
+                        <p>Site responsive avec formulaire de contact, espace admin et carte Google Maps pour un reparateur local.</p>
                         <div class="tags mb-3">
                             <span>Laravel</span><span>MySQL</span><span>Admin</span>
                         </div>
-                        <a href="projet2.html" class="btn btn-primary btn-projet w-100">Voir le projet</a>
+                        <div class="d-grid gap-2">
+                            <a href="projet2/" class="btn btn-primary w-100">Voir le projet</a>
+                            <a href="https://github.com/blou132/projet_bts2" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light w-100">Depot GitHub</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <article class="project-card glass-card h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge rounded-pill text-bg-dark">Java</span>
+                            <span class="project-status">Travaux pratiques</span>
+                        </div>
+                        <h5>Exercices Java POO</h5>
+                        <p>Serie d'exercices pour appliquer heritage, abstraction et polymorphisme sur des cas pratiques.</p>
+                        <div class="tags mb-3">
+                            <span>POO</span><span>Heritage</span><span>Polymorphisme</span>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <a href="projet3/" class="btn btn-primary w-100">Voir le projet</a>
+                            <a href="https://github.com/blou132/cour" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light w-100">Depot GitHub</a>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -140,37 +209,37 @@
     <section id="skills" class="section-block">
         <div class="container">
             <div class="section-header text-center">
-                <p class="section-kicker">Compétences</p>
+                <p class="section-kicker">Competences</p>
                 <h2 class="section-title">Ce que j'utilise au quotidien</h2>
             </div>
             <div class="row g-3">
                 <div class="col-6 col-md-3">
-                    <div class="skill-card text-center glass-card h-100">
+                    <article class="skill-card text-center glass-card h-100">
                         <i class="bi bi-code-slash"></i>
                         <h6>Front-end</h6>
                         <p class="mb-0 text-muted">HTML, CSS, JS, Bootstrap</p>
-                    </div>
+                    </article>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="skill-card text-center glass-card h-100">
+                    <article class="skill-card text-center glass-card h-100">
                         <i class="bi bi-server"></i>
                         <h6>Back-end</h6>
                         <p class="mb-0 text-muted">PHP 8.3, Laravel 12, MVC</p>
-                    </div>
+                    </article>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="skill-card text-center glass-card h-100">
+                    <article class="skill-card text-center glass-card h-100">
                         <i class="bi bi-database"></i>
-                        <h6>Bases de données</h6>
-                        <p class="mb-0 text-muted">SQL, MySQL, modélisation</p>
-                    </div>
+                        <h6>Bases SQL</h6>
+                        <p class="mb-0 text-muted">SQL, MySQL, modelisation</p>
+                    </article>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="skill-card text-center glass-card h-100">
-                        <i class="bi bi-check2-circle"></i>
-                        <h6>Qualité & outils</h6>
-                        <p class="mb-0 text-muted">Tests Laravel, Git, bonnes pratiques</p>
-                    </div>
+                    <article class="skill-card text-center glass-card h-100">
+                        <i class="bi bi-shield-check"></i>
+                        <h6>Qualite / Cyber</h6>
+                        <p class="mb-0 text-muted">Git, tests, auth, validation, bonnes pratiques de securite</p>
+                    </article>
                 </div>
             </div>
         </div>
@@ -182,21 +251,46 @@
                 <p class="section-kicker">Contact</p>
                 <h2 class="section-title">Discutons de votre projet</h2>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="glass-card">
+            <div class="row g-4 align-items-stretch">
+                <div class="col-lg-5">
+                    <aside class="glass-card h-100">
+                        <h5 class="mb-3">Canaux rapides</h5>
+                        <div class="contact-links">
+                            <a class="contact-link" href="downloads/cv.pdf" target="_blank" rel="noopener noreferrer">
+                                <i class="bi bi-file-earmark-person"></i>
+                                <span>Telecharger mon CV</span>
+                            </a>
+                            <a class="contact-link" href="https://github.com/blou132" target="_blank" rel="noopener noreferrer">
+                                <i class="bi bi-github"></i>
+                                <span>Voir mon GitHub</span>
+                            </a>
+                            <a class="contact-link" href="mailto:contact@exemple.com">
+                                <i class="bi bi-envelope-at"></i>
+                                <span>Envoyer un email</span>
+                            </a>
+                        </div>
+                        <p class="text-muted small mb-0 mt-3">Interesse par des stages et projets orientes cybersecurite.</p>
+                        <p class="text-muted small mb-0 mt-2">Remplace l'adresse email et l'ID Formspree par tes informations definitives.</p>
+                    </aside>
+                </div>
+                <div class="col-lg-7">
+                    <div class="glass-card h-100">
                         <form action="https://formspree.io/f/your_id" method="POST" class="row g-3">
-                            <div class="col-12 col-md-6">
-                                <input name="name" class="form-control" placeholder="Votre nom" required>
+                            <div class="col-12 visually-hidden" aria-hidden="true">
+                                <label for="website">Website</label>
+                                <input id="website" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
                             </div>
                             <div class="col-12 col-md-6">
-                                <input name="email" type="email" class="form-control" placeholder="Votre email" required>
+                                <input name="name" class="form-control" placeholder="Votre nom" maxlength="80" autocomplete="name" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <input name="email" type="email" class="form-control" placeholder="Votre email" maxlength="120" autocomplete="email" required>
                             </div>
                             <div class="col-12">
-                                <textarea name="message" class="form-control" placeholder="Votre message" rows="4" required></textarea>
+                                <textarea name="message" class="form-control" placeholder="Votre message" rows="5" maxlength="1500" required></textarea>
                             </div>
                             <div class="col-12 d-flex justify-content-between align-items-center flex-wrap gap-2">
-                                <span class="text-muted">Je réponds rapidement.</span>
+                                <span class="text-muted">Je reponds rapidement.</span>
                                 <button type="submit" class="btn btn-primary">Envoyer</button>
                             </div>
                         </form>
@@ -207,9 +301,20 @@
     </section>
 </main>
 
+<footer class="site-footer">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+        <p class="mb-0">Portfolio BTS SIO - 2026</p>
+        <div class="footer-links d-flex align-items-center gap-3">
+            <a href="#top">Haut de page</a>
+            <a href="#projects">Projets</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</footer>
+
 <button id="back-to-top" class="btn-to-top" type="button" aria-label="Retour en haut"><i class="bi bi-arrow-up"></i></button>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="main.js"></script>
 </body>
 </html>

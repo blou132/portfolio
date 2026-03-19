@@ -191,6 +191,24 @@ body::after {
     gap: 12px;
 }
 
+.hero-highlights {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.highlight-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text);
+    font-size: 0.88rem;
+}
+
 .section-block {
     padding: 80px 0;
     position: relative;
@@ -218,6 +236,10 @@ body::after {
 .section-desc {
     max-width: 720px;
     color: var(--muted);
+}
+
+.section-journey {
+    background: linear-gradient(180deg, rgba(6, 13, 27, 0), rgba(18, 32, 57, 0.26));
 }
 
 .glass-card {
@@ -254,6 +276,56 @@ body::after {
     color: var(--primary-strong);
 }
 
+.info-list li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.info-list li:last-child {
+    margin-bottom: 0;
+}
+
+.timeline {
+    display: grid;
+    gap: 16px;
+}
+
+.timeline-item {
+    padding-left: 60px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 30px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary-strong);
+    box-shadow: 0 0 0 6px rgba(104, 195, 255, 0.12);
+}
+
+.timeline-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 29px;
+    top: 44px;
+    bottom: -18px;
+    width: 2px;
+    background: linear-gradient(180deg, rgba(104, 195, 255, 0.4), rgba(104, 195, 255, 0.08));
+}
+
+.timeline-year {
+    font-size: 0.82rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--primary-strong);
+    margin-bottom: 8px;
+}
+
 .project-card {
     height: 100%;
 }
@@ -279,6 +351,35 @@ body::after {
 .project-status {
     color: var(--primary-strong);
     font-weight: 600;
+}
+
+.contact-links {
+    display: grid;
+    gap: 10px;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-link i {
+    font-size: 1.05rem;
+    color: var(--primary-strong);
+}
+
+.contact-link:hover {
+    transform: translateY(-2px);
+    border-color: rgba(104, 195, 255, 0.6);
+    color: var(--text);
 }
 
 .skill-card {
@@ -345,6 +446,25 @@ body::after {
 
 .text-muted {
     color: var(--muted) !important;
+}
+
+.site-footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 0 32px;
+    background: rgba(3, 9, 20, 0.6);
+}
+
+.site-footer p {
+    color: var(--muted);
+}
+
+.footer-links a {
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--text);
 }
 
 .btn-to-top {
@@ -430,6 +550,12 @@ body::after {
     color: #4b5876;
 }
 
+.theme-light .highlight-pill {
+    background: rgba(33, 85, 217, 0.1);
+    border-color: rgba(33, 85, 217, 0.22);
+    color: #1c2140;
+}
+
 .theme-light .hero-eyebrow {
     color: #2155d9;
 }
@@ -459,6 +585,14 @@ body::after {
     color: #2a3858;
 }
 
+.theme-light .timeline-item::before {
+    box-shadow: 0 0 0 6px rgba(33, 85, 217, 0.14);
+}
+
+.theme-light .timeline-item:not(:last-child)::after {
+    background: linear-gradient(180deg, rgba(33, 85, 217, 0.35), rgba(33, 85, 217, 0.1));
+}
+
 .theme-light .btn-outline-light {
     color: #1c2140;
     background: rgba(33, 85, 217, 0.08);
@@ -469,6 +603,21 @@ body::after {
     color: #0f172a;
     background: rgba(33, 85, 217, 0.16);
     border-color: rgba(33, 85, 217, 0.4);
+}
+
+.theme-light .contact-link {
+    color: #1c2140;
+    background: rgba(33, 85, 217, 0.08);
+    border-color: rgba(33, 85, 217, 0.22);
+}
+
+.theme-light .contact-link:hover {
+    color: #0f172a;
+    border-color: rgba(33, 85, 217, 0.45);
+}
+
+.theme-light .site-footer {
+    background: rgba(255, 255, 255, 0.76);
 }
 
 @media (max-width: 991px) {
@@ -484,5 +633,17 @@ body::after {
 
     .hero {
         padding: 140px 0 80px;
+    }
+
+    .timeline-item {
+        padding-left: 52px;
+    }
+
+    .timeline-item::before {
+        left: 20px;
+    }
+
+    .timeline-item:not(:last-child)::after {
+        left: 25px;
     }
 }
