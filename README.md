@@ -75,6 +75,25 @@ Pour arreter le serveur: `Ctrl + C`
 - Le formulaire de contact ouvre le client email local avec un message pre-rempli.
 - Les liens de footer incluent les pages `mentions-legales` et `politique-confidentialite`.
 
+## RGPD / CNIL
+
+- Information RGPD visible au niveau du formulaire (`index.html`) avec:
+  - responsable de traitement
+  - finalite
+  - base legale (interet legitime)
+  - duree de conservation
+  - droits RGPD + contact
+- Politique de confidentialite detaillee:
+  - donnees traitees
+  - destinataires
+  - droits des personnes
+  - cookies et traceurs
+  - lien CNIL
+- Mentions legales reliees a la politique de confidentialite.
+- Les pages projets incluent aussi les liens vers les pages legales.
+- Banniere d'information cookies ajoutee (memoire locale de fermeture uniquement).
+- Section hebergeur structuree dans les mentions legales (bloc a completer pour la production).
+
 ## Securite
 
 - Hardening applique sur toutes les pages HTML:

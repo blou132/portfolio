@@ -55,6 +55,51 @@ if (contactNameInput) {
     });
 }
 
+// Notice cookies informative (pas de traceurs publicitaires).
+const cookieNoticeKey = 'portfolio_cookie_notice_ack';
+const hasAcknowledgedCookieNotice = () => {
+    try {
+        return window.localStorage.getItem(cookieNoticeKey) === '1';
+    } catch (error) {
+        return false;
+    }
+};
+const setCookieNoticeAcknowledged = () => {
+    try {
+        window.localStorage.setItem(cookieNoticeKey, '1');
+    } catch (error) {
+        // Ignore les navigateurs qui bloquent le stockage local.
+    }
+};
+const createCookieNotice = () => {
+    const notice = document.createElement('aside');
+    notice.className = 'cookie-notice';
+    notice.setAttribute('role', 'status');
+    notice.setAttribute('aria-live', 'polite');
+    notice.innerHTML = `
+        <p class="cookie-notice-text mb-2 mb-md-0">
+            Ce site n'utilise pas de cookies publicitaires. Une preference locale peut etre enregistree pour memoriser la fermeture de ce message.
+            <a href="/politique-confidentialite/">Politique de confidentialite</a>.
+        </p>
+        <div class="cookie-notice-actions">
+            <a class="btn btn-outline-light btn-sm" href="/mentions-legales/">Mentions legales</a>
+            <button type="button" class="btn btn-primary btn-sm" data-cookie-notice-close>J'ai compris</button>
+        </div>
+    `;
+    document.body.appendChild(notice);
+    requestAnimationFrame(() => notice.classList.add('show'));
+
+    const closeButton = notice.querySelector('[data-cookie-notice-close]');
+    closeButton?.addEventListener('click', () => {
+        setCookieNoticeAcknowledged();
+        notice.classList.remove('show');
+        window.setTimeout(() => notice.remove(), 240);
+    });
+};
+if (!hasAcknowledgedCookieNotice()) {
+    createCookieNotice();
+}
+
 // Theme unique: sombre uniquement.
 document.body.classList.add('theme-dark');
 document.body.classList.remove('theme-light');
