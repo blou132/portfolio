@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -26,16 +26,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="../#a-propos">Ãƒâ‚¬ propos</a></li>
+                <li class="nav-item"><a class="nav-link" href="../#a-propos">A propos</a></li>
                 <li class="nav-item"><a class="nav-link" href="../#parcours">Parcours</a></li>
                 <li class="nav-item"><a class="nav-link" href="../#projets">Projets</a></li>
-                <li class="nav-item"><a class="nav-link" href="../#competences">CompÃƒÂ©tences</a></li>
+                <li class="nav-item"><a class="nav-link" href="../#competences">Competences</a></li>
                 <li class="nav-item"><a class="nav-link" href="../#contact">Contact</a></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../downloads/cv.pdf" target="_blank" rel="noopener noreferrer"><i class="bi bi-file-earmark-arrow-down"></i> CV</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="../downloads/cv.pdf" target="_blank" rel="noopener noreferrer"><i class="bi bi-file-earmark-arrow-down"></i> CV</a></li>
             </ul>
-</div>
+        </div>
     </div>
 </nav>
 
@@ -44,33 +42,74 @@
         <div class="section-header">
             <p class="section-kicker">Projet</p>
             <h1 class="section-title">TPFormula1 - Gestion F1</h1>
-            <p class="section-desc">Application PHP MVC lÃƒÂ©gÃƒÂ¨re pour gÃƒÂ©rer Grands Prix, ÃƒÂ©curies et pilotes.</p>
+            <p class="section-desc">Application web PHP / MySQL orientee gestion de championnat: suivi des Grands Prix, ecuries et pilotes avec un back-office securise.</p>
         </div>
+
         <div class="row g-4">
             <div class="col-lg-8">
-                <div class="glass-card">
-                    <h5>Objectif</h5>
-                    <p>Mettre en place un mini-systÃƒÂ¨me de gestion F1 avec une architecture claire, une base MySQL et une authentification.</p>
-                    <h5 class="mt-4">FonctionnalitÃƒÂ©s clÃƒÂ©s</h5>
+                <article class="glass-card mb-4">
+                    <h5>Objectif metier</h5>
+                    <p>Construire un outil simple pour centraliser les donnees F1 et accelerer les operations courantes: ajout, modification, suppression et consultation des elements de saison.</p>
+                    <h5 class="mt-4">Fonctionnalites detaillees</h5>
                     <ul class="mb-0">
-                        <li>CRUD des Grands Prix, ÃƒÂ©curies et pilotes.</li>
-                        <li>Tableau de bord avec statistiques et calendrier de saison.</li>
-                        <li>Authentification et protection des actions sensibles.</li>
-                        <li>Initialisation de la base via <code>init_db.php</code> (seed).</li>
+                        <li>CRUD complet sur trois entites principales: Grands Prix, ecuries, pilotes.</li>
+                        <li>Tableau de bord avec indicateurs rapides (volumetrie et vue calendrier).</li>
+                        <li>Recherche et tri pour retrouver vite une course ou un pilote.</li>
+                        <li>Authentification avec protection des actions sensibles.</li>
+                        <li>Script de bootstrap de base via <code>init_db.php</code> pour demarrage rapide.</li>
                     </ul>
-                </div>
+                </article>
+
+                <article class="glass-card mb-4">
+                    <h5>Architecture technique</h5>
+                    <ul class="mb-0">
+                        <li>Pattern MVC leger: separation claire entre controleurs, modeles et vues.</li>
+                        <li>Acces base en PDO avec requetes preparees pour fiabilite et securite.</li>
+                        <li>Validation cote serveur des champs critiques avant ecriture SQL.</li>
+                        <li>Organisation du code pour faciliter les evolutions futures (nouvelles entites, filtres, stats).</li>
+                    </ul>
+                </article>
+
+                <article class="glass-card">
+                    <h5>Difficultes et resultats</h5>
+                    <ul class="mb-0">
+                        <li><strong>Difficulte:</strong> garder la coherence entre pilotes, ecuries et calendrier.</li>
+                        <li><strong>Reponse:</strong> regles de validation metier + structuration des operations CRUD.</li>
+                        <li><strong>Resultat:</strong> application stable, rapide a prendre en main et facile a demonstrer.</li>
+                        <li><strong>Apprentissages:</strong> modelisation SQL, securisation des formulaires, conception MVC.</li>
+                    </ul>
+                </article>
             </div>
+
             <div class="col-lg-4">
-                <div class="glass-card">
+                <aside class="glass-card mb-4">
                     <p class="text-uppercase small mb-2 text-muted">Stack</p>
                     <div class="tags">
                         <span>PHP</span><span>MySQL</span><span>MVC</span><span>PDO</span>
                     </div>
-                    <p class="text-uppercase small mb-2 mt-4 text-muted">Contexte</p>
-                    <p class="mb-0 text-muted">Projet BTS SIO rÃƒÂ©alisÃƒÂ© en solo.</p>
-                </div>
+                </aside>
+
+                <aside class="glass-card mb-4">
+                    <p class="text-uppercase small mb-2 text-muted">Role</p>
+                    <p class="mb-2 text-muted">Projet solo BTS SIO.</p>
+                    <ul class="mb-0 text-muted">
+                        <li>Conception du schema de donnees.</li>
+                        <li>Developpement complet du back-office.</li>
+                        <li>Tests fonctionnels et corrections.</li>
+                    </ul>
+                </aside>
+
+                <aside class="glass-card">
+                    <p class="text-uppercase small mb-2 text-muted">Points forts</p>
+                    <ul class="mb-0 text-muted">
+                        <li>Base propre et initialisable rapidement.</li>
+                        <li>Interface admin simple et efficace.</li>
+                        <li>Logique metier claire pour soutenance.</li>
+                    </ul>
+                </aside>
             </div>
         </div>
+
         <div class="mt-4 d-flex flex-wrap gap-2">
             <a class="btn btn-primary" href="https://github.com/blou132/projet_bts1" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
             <a class="btn btn-outline-light" href="../#projets">Retour aux projets</a>
@@ -84,9 +123,3 @@
 <script src="../main.js"></script>
 </body>
 </html>
-
-
-
-
-
-

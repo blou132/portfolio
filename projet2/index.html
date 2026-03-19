@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -26,16 +26,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="../#a-propos">Ãƒâ‚¬ propos</a></li>
+                <li class="nav-item"><a class="nav-link" href="../#a-propos">A propos</a></li>
                 <li class="nav-item"><a class="nav-link" href="../#parcours">Parcours</a></li>
                 <li class="nav-item"><a class="nav-link" href="../#projets">Projets</a></li>
-                <li class="nav-item"><a class="nav-link" href="../#competences">CompÃƒÂ©tences</a></li>
+                <li class="nav-item"><a class="nav-link" href="../#competences">Competences</a></li>
                 <li class="nav-item"><a class="nav-link" href="../#contact">Contact</a></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../downloads/cv.pdf" target="_blank" rel="noopener noreferrer"><i class="bi bi-file-earmark-arrow-down"></i> CV</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="../downloads/cv.pdf" target="_blank" rel="noopener noreferrer"><i class="bi bi-file-earmark-arrow-down"></i> CV</a></li>
             </ul>
-</div>
+        </div>
     </div>
 </nav>
 
@@ -43,34 +41,71 @@
     <div class="container">
         <div class="section-header">
             <p class="section-kicker">Projet</p>
-            <h1 class="section-title">JMI 56 - Site pour rÃƒÂ©parateur informatique</h1>
-            <p class="section-desc">Site moderne et responsive avec formulaire de contact et espace admin.</p>
+            <h1 class="section-title">JMI 56 - Site pour reparateur informatique</h1>
+            <p class="section-desc">Projet Laravel en equipe pour un besoin reel: presenter les services, capter des demandes clients et suivre leur traitement dans un espace admin.</p>
         </div>
+
         <div class="row g-4">
             <div class="col-lg-8">
-                <div class="glass-card">
-                    <h5>Objectif</h5>
-                    <p>DÃƒÂ©velopper un site vitrine pour un rÃƒÂ©parateur informatique ÃƒÂ  Ploermel, avec suivi des demandes cÃƒÂ´tÃƒÂ© admin.</p>
-                    <h5 class="mt-4">FonctionnalitÃƒÂ©s clÃƒÂ©s</h5>
+                <article class="glass-card mb-4">
+                    <h5>Objectif metier</h5>
+                    <p>Mettre en ligne une vitrine professionnelle pour un reparateur local de Ploermel, avec un tunnel de contact exploitable cote back-office.</p>
+                    <h5 class="mt-4">Fonctionnalites detaillees</h5>
                     <ul class="mb-0">
-                        <li>Pages publiques : prÃƒÂ©sentation, services, zone et contact.</li>
-                        <li>Formulaire de contact reliÃƒÂ© ÃƒÂ  un espace admin.</li>
-                        <li>Gestion des demandes par statut (Demandes, En cours, TerminÃƒÂ©).</li>
-                        <li>Carte Google Maps centrÃƒÂ©e sur Ploermel avec fallback.</li>
+                        <li>Pages publiques claires: presentation, services, zone d'intervention, contact.</li>
+                        <li>Formulaire de contact avec collecte des infos utiles pour qualification.</li>
+                        <li>Espace admin pour visualiser et traiter les demandes.</li>
+                        <li>Workflow de suivi des tickets: <code>Demandes</code> -> <code>En cours</code> -> <code>Termine</code>.</li>
+                        <li>Integration Google Maps avec fallback en cas de blocage d'API.</li>
                     </ul>
-                </div>
+                </article>
+
+                <article class="glass-card mb-4">
+                    <h5>Architecture technique</h5>
+                    <ul class="mb-0">
+                        <li>Framework Laravel 12, routes web propres et separation front/back-office.</li>
+                        <li>Modeles Eloquent pour les entites metier (demandes, utilisateurs, statuts).</li>
+                        <li>Validation serveur des formulaires via les regles Laravel.</li>
+                        <li>Protection standard Laravel: middleware auth, token CSRF, gestion de session.</li>
+                    </ul>
+                </article>
+
+                <article class="glass-card">
+                    <h5>Travail d'equipe et resultat</h5>
+                    <ul class="mb-0">
+                        <li><strong>Organisation:</strong> repartition front/back, points de synchro et validation commune.</li>
+                        <li><strong>Difficulte:</strong> fiabiliser le passage des demandes entre statuts sans perdre d'information.</li>
+                        <li><strong>Reponse:</strong> logique de traitement explicite + tests manuels de scenario.</li>
+                        <li><strong>Resultat:</strong> site exploitable en demo client et facile a maintenir.</li>
+                    </ul>
+                </article>
             </div>
+
             <div class="col-lg-4">
-                <div class="glass-card">
+                <aside class="glass-card mb-4">
                     <p class="text-uppercase small mb-2 text-muted">Stack</p>
                     <div class="tags">
-                        <span>Laravel 12</span><span>PHP 8.3</span><span>MySQL</span><span>Maps</span>
+                        <span>Laravel 12</span><span>PHP 8.3</span><span>MySQL</span><span>Bootstrap</span>
                     </div>
-                    <p class="text-uppercase small mb-2 mt-4 text-muted">Contexte</p>
-                    <p class="mb-0 text-muted">Projet en ÃƒÂ©quipe avec Maxime (<a href="https://github.com/obSSi" target="_blank" rel="noopener noreferrer">obSSi</a>).</p>
-                </div>
+                </aside>
+
+                <aside class="glass-card mb-4">
+                    <p class="text-uppercase small mb-2 text-muted">Contexte equipe</p>
+                    <p class="mb-2 text-muted">Projet realise avec Maxime.</p>
+                    <p class="mb-0 text-muted">GitHub: <a href="https://github.com/obSSi" target="_blank" rel="noopener noreferrer">obSSi</a></p>
+                </aside>
+
+                <aside class="glass-card">
+                    <p class="text-uppercase small mb-2 text-muted">Apprentissages</p>
+                    <ul class="mb-0 text-muted">
+                        <li>Structuration d'un projet Laravel reel.</li>
+                        <li>Gestion de cycle de vie d'une demande client.</li>
+                        <li>Collaboration Git et revue de code en binome.</li>
+                    </ul>
+                </aside>
             </div>
         </div>
+
         <div class="mt-4 d-flex flex-wrap gap-2">
             <a class="btn btn-primary" href="https://github.com/blou132/projet_bts2" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
             <a class="btn btn-outline-light" href="../#projets">Retour aux projets</a>
@@ -84,10 +119,3 @@
 <script src="../main.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
