@@ -1,4 +1,7 @@
-// Bouton "Retour en haut"
+// =========================================================
+// UI: bouton de retour en haut
+// =========================================================
+// Affiche un bouton flottant des que la page est suffisamment scrollee.
 const backToTop = document.getElementById('back-to-top');
 if (backToTop) {
     const toggleBackToTop = () => backToTop.classList.toggle('show', window.scrollY > 220);
@@ -7,7 +10,10 @@ if (backToTop) {
     toggleBackToTop();
 }
 
-// Compatibilite: anciens hashes anglais -> ancres francaises.
+// =========================================================
+// Compatibilite ancres URL
+// =========================================================
+// Compatibilite SEO/anciens liens: redirige les ancres anglaises vers les ancres FR.
 const hashMap = {
     '#about': '#a-propos',
     '#journey': '#parcours',
@@ -20,7 +26,10 @@ if (mappedHash) {
     document.querySelector(mappedHash)?.scrollIntoView();
 }
 
-// Formulaire de contact: envoi via client email local.
+// =========================================================
+// Formulaire de contact
+// =========================================================
+// Le formulaire n'envoie pas vers un backend: il ouvre le client email local.
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', (event) => {
@@ -44,7 +53,7 @@ if (contactForm) {
     });
 }
 
-// Champ "nom": retire les chiffres en saisie et en collage.
+// Hygiene de saisie: supprime les chiffres dans le champ nom (saisie + collage).
 const contactNameInput = document.getElementById('contact-name');
 if (contactNameInput) {
     contactNameInput.addEventListener('input', () => {
@@ -55,6 +64,9 @@ if (contactNameInput) {
     });
 }
 
+// =========================================================
+// Notice d'information cookies (RGPD/CNIL)
+// =========================================================
 // Notice cookies informative (pas de traceurs publicitaires).
 const cookieNoticeKey = 'portfolio_cookie_notice_ack';
 const hasAcknowledgedCookieNotice = () => {
@@ -100,6 +112,9 @@ if (!hasAcknowledgedCookieNotice()) {
     createCookieNotice();
 }
 
+// =========================================================
+// Effet visuel: etoiles filantes suiveuses de souris
+// =========================================================
 // Trainee "etoiles filantes" liee au mouvement de la souris (desktop uniquement).
 const supportsFinePointer = window.matchMedia('(pointer: fine)').matches;
 const supportsHover = window.matchMedia('(hover: hover)').matches;
@@ -117,6 +132,7 @@ if (supportsFinePointer && supportsHover && !prefersReducedMotion) {
     let previousTime = 0;
     let lastSpawnTime = 0;
 
+    // Genere une particule orientee selon le mouvement courant de la souris.
     const spawnStar = (x, y, vectorX, vectorY, speedFactor, isInteractiveZone) => {
         const norm = Math.hypot(vectorX, vectorY) || 1;
         const directionX = vectorX / norm;
@@ -146,6 +162,7 @@ if (supportsFinePointer && supportsHover && !prefersReducedMotion) {
         star.style.setProperty('--star-duration', `${duration.toFixed(0)}ms`);
 
         starLayer.appendChild(star);
+        // Evite de saturer le DOM si la souris bouge tres vite.
         while (starLayer.childElementCount > maxStars) {
             starLayer.firstElementChild?.remove();
         }
@@ -172,6 +189,7 @@ if (supportsFinePointer && supportsHover && !prefersReducedMotion) {
         const distance = Math.hypot(deltaX, deltaY);
         const speedFactor = Math.min(6, distance / (deltaTime / 16.67));
 
+        // Debounce: limite la frequence de creation pour garder un effet fluide.
         const canSpawn = distance >= 3.5 && (now - lastSpawnTime) >= 26;
         if (canSpawn) {
             const isInteractiveZone = event.target instanceof Element &&
@@ -196,6 +214,9 @@ if (supportsFinePointer && supportsHover && !prefersReducedMotion) {
     });
 }
 
+// =========================================================
+// Theme force (sombre)
+// =========================================================
 // Theme unique: sombre uniquement.
 document.body.classList.add('theme-dark');
 document.body.classList.remove('theme-light');

@@ -1,5 +1,6 @@
 /* Thème cosmique bleu */
 :root {
+    /* Variables globales (couleurs, rayons, ombres). */
     --bg: #050c1d;
     --bg-strong: #07152d;
     --bg-soft: rgba(16, 34, 64, 0.8);
@@ -18,6 +19,7 @@
     --radius: 16px;
 }
 
+/* Palette alternative conservee pour compatibilite future (non activee par defaut). */
 .theme-light {
     --bg: #f7f9fc;
     --bg-strong: #ffffff;
@@ -38,6 +40,7 @@
 
 * { scroll-behavior: smooth; }
 
+/* Fond global spatial: gradients + texture d'etoiles. */
 body {
     font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
     background:
@@ -50,6 +53,7 @@ body {
     min-height: 100vh;
 }
 
+/* Couche d'etoiles fines en arriere-plan. */
 body::before {
     content: '';
     position: fixed;
@@ -64,6 +68,7 @@ body::before {
     z-index: -1;
 }
 
+/* Couche de nebulosite diffuse. */
 body::after {
     content: '';
     position: fixed;
@@ -74,6 +79,7 @@ body::after {
     z-index: -2;
 }
 
+/* Navigation principale fixe. */
 .navbar {
     background: rgba(6, 14, 30, 0.82);
     border-bottom: 1px solid var(--border);
@@ -86,6 +92,7 @@ body::after {
     font-weight: 700;
 }
 
+/* Variante logo en bloc (non utilisee actuellement). */
 .brand-mark {
     width: 34px;
     height: 34px;
@@ -99,6 +106,7 @@ body::after {
     box-shadow: 0 10px 26px rgba(63, 162, 255, 0.4);
 }
 
+/* Logo image de la marque. */
 .brand-logo {
     width: 34px;
     height: 34px;
@@ -111,6 +119,7 @@ body::after {
     box-shadow: 0 10px 26px rgba(63, 162, 255, 0.4);
 }
 
+/* Liens du menu et etat actif. */
 .nav-link {
     color: var(--muted) !important;
     position: relative;
@@ -138,6 +147,7 @@ body::after {
     opacity: 1;
 }
 
+/* Hero d'introduction (zone visible au chargement). */
 .hero {
     position: relative;
     padding: 160px 0 120px;
@@ -209,6 +219,7 @@ body::after {
     font-size: 0.88rem;
 }
 
+/* Blocs de section reutilisables. */
 .section-block {
     padding: 80px 0;
     position: relative;
@@ -238,10 +249,12 @@ body::after {
     color: var(--muted);
 }
 
+/* Zone parcours (timeline). */
 .section-journey {
     background: linear-gradient(180deg, rgba(6, 13, 27, 0), rgba(18, 32, 57, 0.26));
 }
 
+/* Carte "glass" generique reutilisee partout. */
 .glass-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -287,6 +300,7 @@ body::after {
     margin-bottom: 0;
 }
 
+/* Timeline du parcours. */
 .timeline {
     display: grid;
     gap: 16px;
@@ -326,6 +340,7 @@ body::after {
     margin-bottom: 8px;
 }
 
+/* Cartes projets + tags techniques. */
 .project-card {
     height: 100%;
 }
@@ -353,6 +368,7 @@ body::after {
     font-weight: 600;
 }
 
+/* Liens rapides de la section contact. */
 .contact-links {
     display: grid;
     gap: 10px;
@@ -382,6 +398,7 @@ body::after {
     color: var(--text);
 }
 
+/* Cartes competences. */
 .skill-card {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -397,6 +414,7 @@ body::after {
     box-shadow: 0 18px 40px rgba(63, 162, 255, 0.3);
 }
 
+/* Boutons generiques et variantes. */
 .btn {
     border-radius: 12px;
     padding: 12px 18px;
@@ -424,6 +442,7 @@ body::after {
     color: #fff;
 }
 
+/* Champs de formulaire. */
 .form-control {
     background: var(--input-bg);
     border: 1px solid var(--input-border);
@@ -448,6 +467,7 @@ body::after {
     color: var(--muted) !important;
 }
 
+/* Footer. */
 .site-footer {
     border-top: 1px solid var(--border);
     padding: 24px 0 32px;
@@ -467,6 +487,7 @@ body::after {
     color: var(--text);
 }
 
+/* Bandeau d'information cookies RGPD/CNIL. */
 .cookie-notice {
     position: fixed;
     left: 16px;
@@ -510,6 +531,7 @@ body::after {
     flex-wrap: wrap;
 }
 
+/* Couche de rendu pour l'effet etoiles filantes au curseur. */
 .mouse-star-layer {
     position: fixed;
     inset: 0;
@@ -550,6 +572,7 @@ body::after {
     opacity: 0.45;
 }
 
+/* Animation d'une particule "etoile filante". */
 @keyframes shooting-star {
     0% {
         opacity: 0;
@@ -564,6 +587,7 @@ body::after {
     }
 }
 
+/* Ajustement du bandeau cookies sur ecrans moyens/grands. */
 @media (min-width: 768px) {
     .cookie-notice {
         left: 24px;
@@ -573,12 +597,14 @@ body::after {
     }
 }
 
+/* Coupe les effets souris sur mobile et pour accessibilite motion-reduce. */
 @media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
     .mouse-star-layer {
         display: none !important;
     }
 }
 
+/* Bouton flottant retour en haut. */
 .btn-to-top {
     position: fixed;
     bottom: 22px;
@@ -606,6 +632,7 @@ body::after {
     justify-content: center;
 }
 
+/* Theme clair (conserve pour evolution future). */
 .theme-light .navbar {
     background: rgba(255, 255, 255, 0.88);
     border-bottom-color: rgba(16, 30, 64, 0.1);
@@ -732,12 +759,14 @@ body::after {
     background: rgba(255, 255, 255, 0.76);
 }
 
+/* Responsive menu. */
 @media (max-width: 991px) {
     .nav-link::after {
         display: none;
     }
 }
 
+/* Responsive mobile. */
 @media (max-width: 768px) {
     .section-block {
         padding: 64px 0;

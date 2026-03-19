@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Meta de base + politique CSP pour limiter les ressources autorisees. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; script-src 'self' https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:; connect-src 'self'; form-action 'self'; object-src 'none'; base-uri 'self';">
     <meta name="referrer" content="no-referrer">
     <title>Bienvenue sur mon portfolio</title>
+    <!-- Favicon, framework UI et typographie. -->
     <link rel="icon" href="images/logo.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Feuille de style principale du site. -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="theme-dark" data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="100" tabindex="0">
+<!-- Navigation globale: ancres internes + acces CV + liens legaux. -->
 <nav class="navbar navbar-expand-lg navbar-dark cosmic-nav fixed-top" id="site-nav">
     <div class="container">
         <a class="navbar-brand d-flex align-items-center gap-2" href="#top">
@@ -37,6 +41,7 @@
     </div>
 </nav>
 
+<!-- Hero: pitch rapide, CTA et resume du positionnement. -->
 <header id="top" class="hero text-center text-white">
     <div class="container position-relative">
         <p class="hero-eyebrow text-uppercase">BTS SIO SLAM - 2e annee</p>
@@ -62,6 +67,7 @@
 </header>
 
 <main>
+    <!-- Section profil / presentation. -->
     <section id="a-propos" class="section-block">
         <div class="container">
             <div class="section-header">
@@ -108,6 +114,7 @@
         </div>
     </section>
 
+    <!-- Section parcours chronologique. -->
     <section id="parcours" class="section-block section-journey">
         <div class="container">
             <div class="section-header">
@@ -140,6 +147,7 @@
         </div>
     </section>
 
+    <!-- Section cartes projets et liens details. -->
     <section id="projets" class="section-block">
         <div class="container">
             <div class="section-header">
@@ -203,6 +211,7 @@
         </div>
     </section>
 
+    <!-- Section competences techniques. -->
     <section id="competences" class="section-block">
         <div class="container">
             <div class="section-header text-center">
@@ -242,6 +251,7 @@
         </div>
     </section>
 
+    <!-- Section contact + formulaire avec mention RGPD. -->
     <section id="contact" class="section-block">
         <div class="container">
             <div class="section-header text-center">
@@ -301,6 +311,7 @@
     </section>
 </main>
 
+<!-- Pied de page avec copyright et liens de navigation/legaux. -->
 <footer class="site-footer">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
         <p class="mb-0">&copy; 2026 Teo Champeval - Portfolio BTS SIO. Tous droits reserves.</p>
@@ -314,8 +325,10 @@
     </div>
 </footer>
 
+<!-- Bouton flottant pour revenir en haut de page. -->
 <button id="back-to-top" class="btn-to-top" type="button" aria-label="Retour en haut"><i class="bi bi-arrow-up"></i></button>
 
+<!-- JS Bootstrap puis script principal du projet. -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="main.js"></script>
 </body>
