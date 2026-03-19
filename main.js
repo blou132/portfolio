@@ -100,6 +100,102 @@ if (!hasAcknowledgedCookieNotice()) {
     createCookieNotice();
 }
 
+// Trainee "etoiles filantes" liee au mouvement de la souris (desktop uniquement).
+const supportsFinePointer = window.matchMedia('(pointer: fine)').matches;
+const supportsHover = window.matchMedia('(hover: hover)').matches;
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (supportsFinePointer && supportsHover && !prefersReducedMotion) {
+    const starLayer = document.createElement('div');
+    starLayer.className = 'mouse-star-layer';
+    starLayer.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(starLayer);
+
+    const maxStars = 16;
+    let hasPreviousPointer = false;
+    let previousX = 0;
+    let previousY = 0;
+    let previousTime = 0;
+    let lastSpawnTime = 0;
+
+    const spawnStar = (x, y, vectorX, vectorY, speedFactor, isInteractiveZone) => {
+        const norm = Math.hypot(vectorX, vectorY) || 1;
+        const directionX = vectorX / norm;
+        const directionY = vectorY / norm;
+        const jitter = (Math.random() * 0.18) - 0.09;
+        const travel = Math.min(90, 24 + (speedFactor * 9));
+        const duration = Math.max(300, 560 - (speedFactor * 34));
+        const starSize = Math.max(1.6, Math.min(2.8, 1.5 + (speedFactor * 0.24)));
+        const trailLength = Math.min(42, 14 + (speedFactor * 4));
+        const moveX = (directionX + jitter) * travel;
+        const moveY = (directionY - jitter) * travel;
+        const angle = Math.atan2(moveY, moveX) * (180 / Math.PI);
+
+        const star = document.createElement('span');
+        star.className = 'mouse-star';
+        if (isInteractiveZone) {
+            star.classList.add('soft');
+        }
+
+        star.style.left = `${x}px`;
+        star.style.top = `${y}px`;
+        star.style.setProperty('--star-size', `${starSize.toFixed(2)}px`);
+        star.style.setProperty('--trail-length', `${trailLength.toFixed(2)}px`);
+        star.style.setProperty('--shoot-x', `${moveX.toFixed(2)}px`);
+        star.style.setProperty('--shoot-y', `${moveY.toFixed(2)}px`);
+        star.style.setProperty('--shoot-rotate', `${angle.toFixed(2)}deg`);
+        star.style.setProperty('--star-duration', `${duration.toFixed(0)}ms`);
+
+        starLayer.appendChild(star);
+        while (starLayer.childElementCount > maxStars) {
+            starLayer.firstElementChild?.remove();
+        }
+
+        star.addEventListener('animationend', () => {
+            star.remove();
+        }, { once: true });
+    };
+
+    window.addEventListener('pointermove', (event) => {
+        const now = performance.now();
+
+        if (!hasPreviousPointer) {
+            hasPreviousPointer = true;
+            previousX = event.clientX;
+            previousY = event.clientY;
+            previousTime = now;
+            return;
+        }
+
+        const deltaX = event.clientX - previousX;
+        const deltaY = event.clientY - previousY;
+        const deltaTime = Math.max(16, now - previousTime);
+        const distance = Math.hypot(deltaX, deltaY);
+        const speedFactor = Math.min(6, distance / (deltaTime / 16.67));
+
+        const canSpawn = distance >= 3.5 && (now - lastSpawnTime) >= 26;
+        if (canSpawn) {
+            const isInteractiveZone = event.target instanceof Element &&
+                event.target.closest('a, button, input, textarea, select, label');
+            spawnStar(event.clientX, event.clientY, deltaX, deltaY, speedFactor, Boolean(isInteractiveZone));
+            lastSpawnTime = now;
+        }
+
+        previousX = event.clientX;
+        previousY = event.clientY;
+        previousTime = now;
+    });
+
+    window.addEventListener('pointerleave', () => {
+        hasPreviousPointer = false;
+    });
+
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            hasPreviousPointer = false;
+        }
+    });
+}
+
 // Theme unique: sombre uniquement.
 document.body.classList.add('theme-dark');
 document.body.classList.remove('theme-light');
