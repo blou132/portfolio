@@ -48,8 +48,10 @@ Pour arreter le serveur: `Ctrl + C`
 - `index.html`: page principale
 - `projet-tpformula1/index.html`, `projet-jmi56/index.html`, `projet-java-poo/index.html`: pages de details projets (clean URL FR)
 - `projet1/index.html`, `projet2/index.html`, `projet3/index.html`: anciennes routes conservees pour compatibilite
+- `projet1.html`, `projet2.html`, `projet3.html`: redirections vers les clean URLs
+- `mentions-legales/index.html`, `politique-confidentialite/index.html`: pages legales (RGPD)
 - `style.css`: styles globaux
-- `main.js`: interactions (theme, retour en haut)
+- `main.js`: interactions (theme, retour en haut, envoi du formulaire)
 - `images/`: logos et images
 - `downloads/cv.pdf`: CV telechargeable
 
@@ -70,8 +72,8 @@ Pour arreter le serveur: `Ctrl + C`
   - `http://localhost:3000/#parcours`
   - `http://localhost:3000/#projets`
   - `http://localhost:3000/#competences`
-- Le formulaire de contact dans `index.html` utilise Formspree.
-- Pense a remplacer `https://formspree.io/f/your_id` par ton vrai identifiant Formspree.
+- Le formulaire de contact ouvre le client email local avec un message pre-rempli.
+- Les liens de footer incluent les pages `mentions-legales` et `politique-confidentialite`.
 
 ## Securite
 
@@ -80,7 +82,7 @@ Pour arreter le serveur: `Ctrl + C`
   - `Referrer-Policy` via meta
   - Bootstrap CDN epingle avec `integrity` + `crossorigin`
   - Liens externes en `rel="noopener noreferrer"`
-- Protection anti-spam basique ajoutee au formulaire (`_gotcha`) + limites de longueur sur les champs.
+- Protection anti-spam basique ajoutee au formulaire (`_gotcha`) + limites de longueur sur les champs + filtre anti-chiffres sur le nom.
 - Fichier d'en-tetes pour hebergement statique: `_headers` (Netlify compatible), avec:
   - CSP serveur
   - `X-Content-Type-Options: nosniff`

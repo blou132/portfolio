@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; script-src 'self' https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; object-src 'none'; base-uri 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; script-src 'self' https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:; connect-src 'self'; form-action 'self'; object-src 'none'; base-uri 'self';">
     <meta name="referrer" content="no-referrer">
     <title>Bienvenue sur mon portfolio</title>
     <link rel="icon" href="images/logo.png" type="image/png">
@@ -261,18 +261,18 @@
                                 <i class="bi bi-github"></i>
                                 <span>Voir mon GitHub</span>
                             </a>
-                            <a class="contact-link" href="mailto:contact@exemple.com">
+                            <a class="contact-link" href="mailto:teo.champeval@gmail.com">
                                 <i class="bi bi-envelope-at"></i>
-                                <span>Envoyer un email</span>
+                                <span>teo.champeval@gmail.com</span>
                             </a>
                         </div>
                         <p class="text-muted small mb-0 mt-3">Interesse par des stages et projets orientes cybersecurite.</p>
-                        <p class="text-muted small mb-0 mt-2">Remplace l'adresse email et l'ID Formspree par tes informations definitives.</p>
+                        <p class="text-muted small mb-0 mt-2">Disponible pour echanges, projets et opportunites d'etudes en cybersecurite.</p>
                     </aside>
                 </div>
                 <div class="col-lg-7">
                     <div class="glass-card h-100">
-                        <form action="https://formspree.io/f/your_id" method="POST" class="row g-3">
+                        <form id="contact-form" class="row g-3">
                             <div class="col-12 visually-hidden" aria-hidden="true">
                                 <label for="website">Website</label>
                                 <input id="website" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
@@ -290,6 +290,9 @@
                                 <span class="text-muted">Je reponds rapidement.</span>
                                 <button type="submit" class="btn btn-primary">Envoyer</button>
                             </div>
+                            <div class="col-12">
+                                <p class="text-muted small mb-0">En envoyant ce message, vous acceptez l'utilisation de vos donnees uniquement pour etre recontacte. Details: <a href="politique-confidentialite/">politique de confidentialite</a>.</p>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -305,6 +308,8 @@
             <a href="#top">Haut de page</a>
             <a href="#projets">Projets</a>
             <a href="#contact">Contact</a>
+            <a href="mentions-legales/">Mentions legales</a>
+            <a href="politique-confidentialite/">Confidentialite</a>
         </div>
     </div>
 </footer>
