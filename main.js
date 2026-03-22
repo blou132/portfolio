@@ -29,13 +29,13 @@ if (mappedHash) {
 // =========================================================
 // Formulaire de contact
 // =========================================================
-// Le formulaire envoie les donnees vers FormSubmit puis redirige vers la section contact.
+// Le formulaire envoie les donnees vers FormSubmit puis redirige vers une page de confirmation.
 const contactForm = document.getElementById('contact-form');
+const isFileProtocol = window.location.protocol === 'file:';
 if (contactForm) {
     const nextUrlInput = document.getElementById('contact-next-url');
-    if (nextUrlInput) {
-        const nextUrl = new URL(window.location.href);
-        nextUrl.hash = 'contact';
+    if (nextUrlInput && !isFileProtocol) {
+        const nextUrl = new URL('message-envoye/', window.location.href);
         nextUrlInput.value = nextUrl.toString();
     }
 
@@ -43,6 +43,30 @@ if (contactForm) {
         const honeyPot = contactForm.querySelector('input[name="_honey"]');
         if (honeyPot && honeyPot.value.trim() !== '') {
             event.preventDefault();
+            return;
+        }
+
+        if (!contactForm.checkValidity()) {
+            event.preventDefault();
+            contactForm.reportValidity();
+            return;
+        }
+
+        // FormSubmit ne fonctionne pas en ouvrant index.html directement (file://).
+        // Dans ce cas, on bascule automatiquement sur un mailto pour eviter la page d'erreur.
+        if (isFileProtocol) {
+            event.preventDefault();
+
+            const formData = new FormData(contactForm);
+            const name = String(formData.get('name') || '').trim();
+            const email = String(formData.get('email') || '').trim();
+            const message = String(formData.get('message') || '').trim();
+
+            const subject = encodeURIComponent(`Contact portfolio - ${name}`);
+            const body = encodeURIComponent(
+                `Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+            );
+            window.location.href = `mailto:teo.champeval@gmail.com?subject=${subject}&body=${body}`;
         }
     });
 }
