@@ -29,27 +29,21 @@ if (mappedHash) {
 // =========================================================
 // Formulaire de contact
 // =========================================================
-// Le formulaire n'envoie pas vers un backend: il ouvre le client email local.
+// Le formulaire envoie les donnees vers FormSubmit puis redirige vers la section contact.
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
+    const nextUrlInput = document.getElementById('contact-next-url');
+    if (nextUrlInput) {
+        const nextUrl = new URL(window.location.href);
+        nextUrl.hash = 'contact';
+        nextUrlInput.value = nextUrl.toString();
+    }
+
     contactForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        if (!contactForm.checkValidity()) {
-            contactForm.reportValidity();
-            return;
+        const honeyPot = contactForm.querySelector('input[name="_honey"]');
+        if (honeyPot && honeyPot.value.trim() !== '') {
+            event.preventDefault();
         }
-
-        const formData = new FormData(contactForm);
-        const name = String(formData.get('name') || '').trim();
-        const email = String(formData.get('email') || '').trim();
-        const message = String(formData.get('message') || '').trim();
-
-        const subject = encodeURIComponent(`Contact portfolio - ${name}`);
-        const body = encodeURIComponent(
-            `Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-        );
-
-        window.location.href = `mailto:teo.champeval@gmail.com?subject=${subject}&body=${body}`;
     });
 }
 
@@ -90,11 +84,11 @@ const createCookieNotice = () => {
     notice.setAttribute('aria-live', 'polite');
     notice.innerHTML = `
         <p class="cookie-notice-text mb-2 mb-md-0">
-            Ce site n'utilise pas de cookies publicitaires. Une preference locale peut etre enregistree pour memoriser la fermeture de ce message.
-            <a href="/politique-confidentialite/">Politique de confidentialite</a>.
+            Ce site n'utilise pas de cookies publicitaires. Une préférence locale peut être enregistrée pour mémoriser la fermeture de ce message.
+            <a href="/politique-confidentialite/">Politique de confidentialité</a>.
         </p>
         <div class="cookie-notice-actions">
-            <a class="btn btn-outline-light btn-sm" href="/mentions-legales/">Mentions legales</a>
+            <a class="btn btn-outline-light btn-sm" href="/mentions-legales/">Mentions légales</a>
             <button type="button" class="btn btn-primary btn-sm" data-cookie-notice-close>J'ai compris</button>
         </div>
     `;
@@ -115,7 +109,7 @@ if (!hasAcknowledgedCookieNotice()) {
 // =========================================================
 // Effet visuel: etoiles filantes suiveuses de souris
 // =========================================================
-// Trainee "etoiles filantes" liee au mouvement de la souris (desktop uniquement).
+// Trainee "etoiles filantes" liée au mouvement de la souris (desktop uniquement).
 const supportsFinePointer = window.matchMedia('(pointer: fine)').matches;
 const supportsHover = window.matchMedia('(hover: hover)').matches;
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -132,7 +126,7 @@ if (supportsFinePointer && supportsHover && !prefersReducedMotion) {
     let previousTime = 0;
     let lastSpawnTime = 0;
 
-    // Genere une particule orientee selon le mouvement courant de la souris.
+    // Genere une particule orientée selon le mouvement courant de la souris.
     const spawnStar = (x, y, vectorX, vectorY, speedFactor, isInteractiveZone) => {
         const norm = Math.hypot(vectorX, vectorY) || 1;
         const directionX = vectorX / norm;

@@ -1,4 +1,4 @@
-﻿# Portfolio
+# Portfolio
 
 Site portfolio statique (HTML, CSS, JS).
 
@@ -72,7 +72,7 @@ Pour arreter le serveur: `Ctrl + C`
   - `http://localhost:3000/#parcours`
   - `http://localhost:3000/#projets`
   - `http://localhost:3000/#competences`
-- Le formulaire de contact ouvre le client email local avec un message pre-rempli.
+- Le formulaire de contact envoie les messages vers `teo.champeval@gmail.com` via FormSubmit.
 - Les liens de footer incluent les pages `mentions-legales` et `politique-confidentialite`.
 
 ## RGPD / CNIL
@@ -80,19 +80,19 @@ Pour arreter le serveur: `Ctrl + C`
 - Information RGPD visible au niveau du formulaire (`index.html`) avec:
   - responsable de traitement
   - finalite
-  - base legale (interet legitime)
+  - base legale (intérêt legitime)
   - duree de conservation
   - droits RGPD + contact
-- Politique de confidentialite detaillee:
-  - donnees traitees
+- Politique de confidentialité détaillée:
+  - données traitées
   - destinataires
   - droits des personnes
   - cookies et traceurs
   - lien CNIL
-- Mentions legales reliees a la politique de confidentialite.
+- Mentions legales reliées a la politique de confidentialité.
 - Les pages projets incluent aussi les liens vers les pages legales.
 - Banniere d'information cookies ajoutee (memoire locale de fermeture uniquement).
-- Section hebergeur structuree dans les mentions legales (bloc a completer pour la production).
+- Section hébergeur structuree dans les mentions legales (bloc à compléter pour la production).
 
 ## Securite
 
@@ -101,7 +101,7 @@ Pour arreter le serveur: `Ctrl + C`
   - `Referrer-Policy` via meta
   - Bootstrap CDN epingle avec `integrity` + `crossorigin`
   - Liens externes en `rel="noopener noreferrer"`
-- Protection anti-spam basique ajoutee au formulaire (`_gotcha`) + limites de longueur sur les champs + filtre anti-chiffres sur le nom.
+- Protection anti-spam basique ajoutee au formulaire (`_honey`) + limites de longueur sur les champs + filtre anti-chiffres sur le nom.
 - Fichier d'en-tetes pour hebergement statique: `_headers` (Netlify compatible), avec:
   - CSP serveur
   - `X-Content-Type-Options: nosniff`

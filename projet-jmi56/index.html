@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Meta de base + securite CSP pour la page projet. -->
+    <!-- Meta de base + sécurité CSP pour la page projet. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; script-src 'self' https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:; connect-src 'self'; form-action 'self'; object-src 'none'; base-uri 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; script-src 'self' https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:; connect-src 'self'; form-action 'self' https://formsubmit.co; object-src 'none'; base-uri 'self';">
     <meta name="referrer" content="no-referrer">
     <title>Portfolio | JMI 56</title>
     <!-- Ressources visuelles communes du portfolio. -->
@@ -20,69 +20,68 @@
 <!-- Navigation commune vers la page d'accueil et les sections principales. -->
 <nav class="navbar navbar-expand-lg navbar-dark cosmic-nav fixed-top" id="site-nav">
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="../#top">
+        <a class="navbar-brand d-flex align-items-center gap-2" aria-label="Accueil du portfolio" href="../#top">
             <img class="brand-logo" src="../images/logo.png" alt="Logo" width="34" height="34">
-            <span>Mon Portfolio</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Ouvrir le menu">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="../#a-propos">A propos</a></li>
+                <li class="nav-item"><a class="nav-link" href="../#a-propos">À propos</a></li>
                 <li class="nav-item"><a class="nav-link" href="../#parcours">Parcours</a></li>
                 <li class="nav-item"><a class="nav-link" href="../#projets">Projets</a></li>
-                <li class="nav-item"><a class="nav-link" href="../#competences">Competences</a></li>
+                <li class="nav-item"><a class="nav-link" href="../#competences">Compétences</a></li>
                 <li class="nav-item"><a class="nav-link" href="../#contact">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="../mentions-legales/">Mentions legales</a></li>
-                <li class="nav-item"><a class="nav-link" href="../politique-confidentialite/">Confidentialite</a></li>
+                <li class="nav-item"><a class="nav-link" href="../mentions-legales/">Mentions légales</a></li>
+                <li class="nav-item"><a class="nav-link" href="../politique-confidentialite/">Confidentialité</a></li>
                 <li class="nav-item"><a class="nav-link" href="../downloads/cv.pdf" target="_blank" rel="noopener noreferrer"><i class="bi bi-file-earmark-arrow-down"></i> CV</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<!-- Contenu detaille du projet JMI 56. -->
+<!-- Contenu détaillé du projet JMI 56. -->
 <main class="section-block">
     <div class="container">
         <div class="section-header">
             <p class="section-kicker">Projet</p>
-            <h1 class="section-title">JMI 56 - Site pour reparateur informatique</h1>
-            <p class="section-desc">Projet Laravel en equipe pour un besoin reel: presenter les services, capter des demandes clients et suivre leur traitement dans un espace admin.</p>
+            <h1 class="section-title">JMI 56 - Site pour réparateur informatique</h1>
+            <p class="section-desc">Projet Laravel en équipe pour un besoin réel: présenter les services, capter des demandes clients et suivre leur traitement dans un espace admin.</p>
         </div>
 
         <div class="row g-4">
             <div class="col-lg-8">
                 <article class="glass-card mb-4">
-                    <h5>Objectif metier</h5>
-                    <p>Mettre en ligne une vitrine professionnelle pour un reparateur local de Ploermel, avec un tunnel de contact exploitable cote back-office.</p>
-                    <h5 class="mt-4">Fonctionnalites detaillees</h5>
+                    <h5>Objectif métier</h5>
+                    <p>Mettre en ligne une vitrine professionnelle pour un réparateur local de Ploermel, avec un tunnel de contact exploitable côté back-office.</p>
+                    <h5 class="mt-4">Fonctionnalités détaillées</h5>
                     <ul class="mb-0">
-                        <li>Pages publiques claires: presentation, services, zone d'intervention, contact.</li>
+                        <li>Pages publiques claires: présentation, services, zone d'intervention, contact.</li>
                         <li>Formulaire de contact avec collecte des infos utiles pour qualification.</li>
                         <li>Espace admin pour visualiser et traiter les demandes.</li>
                         <li>Workflow de suivi des tickets: <code>Demandes</code> -> <code>En cours</code> -> <code>Termine</code>.</li>
-                        <li>Integration Google Maps avec fallback en cas de blocage d'API.</li>
+                        <li>Intégration Google Maps avec fallback en cas de blocage d'API.</li>
                     </ul>
                 </article>
 
                 <article class="glass-card mb-4">
                     <h5>Architecture technique</h5>
                     <ul class="mb-0">
-                        <li>Framework Laravel 12, routes web propres et separation front/back-office.</li>
-                        <li>Modeles Eloquent pour les entites metier (demandes, utilisateurs, statuts).</li>
-                        <li>Validation serveur des formulaires via les regles Laravel.</li>
+                        <li>Framework Laravel 12, routes web propres et séparation front/back-office.</li>
+                        <li>Modèles Eloquent pour les entités métier (demandes, utilisateurs, statuts).</li>
+                        <li>Validation serveur des formulaires via les règles Laravel.</li>
                         <li>Protection standard Laravel: middleware auth, token CSRF, gestion de session.</li>
                     </ul>
                 </article>
 
                 <article class="glass-card">
-                    <h5>Travail d'equipe et resultat</h5>
+                    <h5>Travail d'équipe et resultat</h5>
                     <ul class="mb-0">
-                        <li><strong>Organisation:</strong> repartition front/back, points de synchro et validation commune.</li>
-                        <li><strong>Difficulte:</strong> fiabiliser le passage des demandes entre statuts sans perdre d'information.</li>
-                        <li><strong>Reponse:</strong> logique de traitement explicite + tests manuels de scenario.</li>
-                        <li><strong>Resultat:</strong> site exploitable en demo client et facile a maintenir.</li>
+                        <li><strong>Organisation:</strong> répartition front/back, points de synchro et validation commune.</li>
+                        <li><strong>Difficulté:</strong> fiabiliser le passage des demandes entre statuts sans perdre d'information.</li>
+                        <li><strong>Réponse:</strong> logique de traitement explicite + tests manuels de scénario.</li>
+                        <li><strong>Résultat:</strong> site exploitable en démo client et facile a maintenir.</li>
                     </ul>
                 </article>
             </div>
@@ -96,17 +95,17 @@
                 </aside>
 
                 <aside class="glass-card mb-4">
-                    <p class="text-uppercase small mb-2 text-muted">Contexte equipe</p>
-                    <p class="mb-2 text-muted">Projet realise avec Maxime.</p>
+                    <p class="text-uppercase small mb-2 text-muted">Contexte équipe</p>
+                    <p class="mb-2 text-muted">Projet réalisé avec Maxime.</p>
                     <p class="mb-0 text-muted">GitHub: <a href="https://github.com/obSSi" target="_blank" rel="noopener noreferrer">obSSi</a></p>
                 </aside>
 
                 <aside class="glass-card">
                     <p class="text-uppercase small mb-2 text-muted">Apprentissages</p>
                     <ul class="mb-0 text-muted">
-                        <li>Structuration d'un projet Laravel reel.</li>
+                        <li>Structuration d'un projet Laravel réel.</li>
                         <li>Gestion de cycle de vie d'une demande client.</li>
-                        <li>Collaboration Git et revue de code en binome.</li>
+                        <li>Collaboration Git et revue de code en binôme.</li>
                     </ul>
                 </aside>
             </div>
@@ -114,6 +113,7 @@
 
         <div class="mt-4 d-flex flex-wrap gap-2">
             <a class="btn btn-primary" href="https://github.com/blou132/projet_bts2" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
+            <a class="btn btn-outline-light" href="https://projet-bts2.teo-infra.fr/" target="_blank" rel="noopener noreferrer">Voir en ligne</a>
             <a class="btn btn-outline-light" href="../#projets">Retour aux projets</a>
         </div>
     </div>

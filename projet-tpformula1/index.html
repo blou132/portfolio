@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Meta de base + securite CSP pour la page projet. -->
+    <!-- Meta de base + sécurité CSP pour la page projet. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; script-src 'self' https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:; connect-src 'self'; form-action 'self'; object-src 'none'; base-uri 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; script-src 'self' https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:; connect-src 'self'; form-action 'self' https://formsubmit.co; object-src 'none'; base-uri 'self';">
     <meta name="referrer" content="no-referrer">
     <title>Portfolio | TPFormula1</title>
     <!-- Ressources visuelles communes du portfolio. -->
@@ -20,69 +20,68 @@
 <!-- Navigation commune vers la page d'accueil et les sections principales. -->
 <nav class="navbar navbar-expand-lg navbar-dark cosmic-nav fixed-top" id="site-nav">
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="../#top">
+        <a class="navbar-brand d-flex align-items-center gap-2" aria-label="Accueil du portfolio" href="../#top">
             <img class="brand-logo" src="../images/logo.png" alt="Logo" width="34" height="34">
-            <span>Mon Portfolio</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Ouvrir le menu">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="../#a-propos">A propos</a></li>
+                <li class="nav-item"><a class="nav-link" href="../#a-propos">À propos</a></li>
                 <li class="nav-item"><a class="nav-link" href="../#parcours">Parcours</a></li>
                 <li class="nav-item"><a class="nav-link" href="../#projets">Projets</a></li>
-                <li class="nav-item"><a class="nav-link" href="../#competences">Competences</a></li>
+                <li class="nav-item"><a class="nav-link" href="../#competences">Compétences</a></li>
                 <li class="nav-item"><a class="nav-link" href="../#contact">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="../mentions-legales/">Mentions legales</a></li>
-                <li class="nav-item"><a class="nav-link" href="../politique-confidentialite/">Confidentialite</a></li>
+                <li class="nav-item"><a class="nav-link" href="../mentions-legales/">Mentions légales</a></li>
+                <li class="nav-item"><a class="nav-link" href="../politique-confidentialite/">Confidentialité</a></li>
                 <li class="nav-item"><a class="nav-link" href="../downloads/cv.pdf" target="_blank" rel="noopener noreferrer"><i class="bi bi-file-earmark-arrow-down"></i> CV</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<!-- Contenu detaille du projet TPFormula1. -->
+<!-- Contenu détaillé du projet TPFormula1. -->
 <main class="section-block">
     <div class="container">
         <div class="section-header">
             <p class="section-kicker">Projet</p>
             <h1 class="section-title">TPFormula1 - Gestion F1</h1>
-            <p class="section-desc">Application web PHP / MySQL orientee gestion de championnat: suivi des Grands Prix, ecuries et pilotes avec un back-office securise.</p>
+            <p class="section-desc">Application web PHP / MySQL orientée gestion de championnat: suivi des Grands Prix, écuries et pilotes avec un back-office sécurisé.</p>
         </div>
 
         <div class="row g-4">
             <div class="col-lg-8">
                 <article class="glass-card mb-4">
-                    <h5>Objectif metier</h5>
-                    <p>Construire un outil simple pour centraliser les donnees F1 et accelerer les operations courantes: ajout, modification, suppression et consultation des elements de saison.</p>
-                    <h5 class="mt-4">Fonctionnalites detaillees</h5>
+                    <h5>Objectif métier</h5>
+                    <p>Construire un outil simple pour centraliser les données F1 et accélérer les opérations courantes: ajout, modification, suppression et consultation des éléments de saison.</p>
+                    <h5 class="mt-4">Fonctionnalités détaillées</h5>
                     <ul class="mb-0">
-                        <li>CRUD complet sur trois entites principales: Grands Prix, ecuries, pilotes.</li>
-                        <li>Tableau de bord avec indicateurs rapides (volumetrie et vue calendrier).</li>
+                        <li>CRUD complet sur trois entités principales: Grands Prix, écuries, pilotes.</li>
+                        <li>Tableau de bord avec indicateurs rapides (volumétrie et vue calendrier).</li>
                         <li>Recherche et tri pour retrouver vite une course ou un pilote.</li>
                         <li>Authentification avec protection des actions sensibles.</li>
-                        <li>Script de bootstrap de base via <code>init_db.php</code> pour demarrage rapide.</li>
+                        <li>Script de bootstrap de base via <code>init_db.php</code> pour démarrage rapide.</li>
                     </ul>
                 </article>
 
                 <article class="glass-card mb-4">
                     <h5>Architecture technique</h5>
                     <ul class="mb-0">
-                        <li>Pattern MVC leger: separation claire entre controleurs, modeles et vues.</li>
-                        <li>Acces base en PDO avec requetes preparees pour fiabilite et securite.</li>
-                        <li>Validation cote serveur des champs critiques avant ecriture SQL.</li>
-                        <li>Organisation du code pour faciliter les evolutions futures (nouvelles entites, filtres, stats).</li>
+                        <li>Pattern MVC léger: séparation claire entre contrôleurs, modèles et vues.</li>
+                        <li>Accès base en PDO avec requêtes préparées pour fiabilité et sécurité.</li>
+                        <li>Validation côté serveur des champs critiques avant écriture SQL.</li>
+                        <li>Organisation du code pour faciliter les évolutions futures (nouvelles entités, filtres, stats).</li>
                     </ul>
                 </article>
 
                 <article class="glass-card">
-                    <h5>Difficultes et resultats</h5>
+                    <h5>Difficultés et résultats</h5>
                     <ul class="mb-0">
-                        <li><strong>Difficulte:</strong> garder la coherence entre pilotes, ecuries et calendrier.</li>
-                        <li><strong>Reponse:</strong> regles de validation metier + structuration des operations CRUD.</li>
-                        <li><strong>Resultat:</strong> application stable, rapide a prendre en main et facile a demonstrer.</li>
-                        <li><strong>Apprentissages:</strong> modelisation SQL, securisation des formulaires, conception MVC.</li>
+                        <li><strong>Difficulté:</strong> garder la cohérence entre pilotes, écuries et calendrier.</li>
+                        <li><strong>Réponse:</strong> règles de validation métier + structuration des opérations CRUD.</li>
+                        <li><strong>Résultat:</strong> application stable, rapide à prendre en main et facile à démontrer.</li>
+                        <li><strong>Apprentissages:</strong> modélisation SQL, sécurisation des formulaires, conception MVC.</li>
                     </ul>
                 </article>
             </div>
@@ -96,11 +95,11 @@
                 </aside>
 
                 <aside class="glass-card mb-4">
-                    <p class="text-uppercase small mb-2 text-muted">Role</p>
+                    <p class="text-uppercase small mb-2 text-muted">Rôle</p>
                     <p class="mb-2 text-muted">Projet solo BTS SIO.</p>
                     <ul class="mb-0 text-muted">
-                        <li>Conception du schema de donnees.</li>
-                        <li>Developpement complet du back-office.</li>
+                        <li>Conception du schéma de données.</li>
+                        <li>Développement complet du back-office.</li>
                         <li>Tests fonctionnels et corrections.</li>
                     </ul>
                 </aside>
@@ -110,7 +109,7 @@
                     <ul class="mb-0 text-muted">
                         <li>Base propre et initialisable rapidement.</li>
                         <li>Interface admin simple et efficace.</li>
-                        <li>Logique metier claire pour soutenance.</li>
+                        <li>Logique métier claire pour soutenance.</li>
                     </ul>
                 </aside>
             </div>
@@ -118,6 +117,7 @@
 
         <div class="mt-4 d-flex flex-wrap gap-2">
             <a class="btn btn-primary" href="https://github.com/blou132/projet_bts1" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
+            <a class="btn btn-outline-light" href="https://projet-bts1.teo-infra.fr/" target="_blank" rel="noopener noreferrer">Voir en ligne</a>
             <a class="btn btn-outline-light" href="../#projets">Retour aux projets</a>
         </div>
     </div>

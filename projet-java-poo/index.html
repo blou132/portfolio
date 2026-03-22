@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Meta de base + securite CSP pour la page projet. -->
+    <!-- Meta de base + sécurité CSP pour la page projet. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; script-src 'self' https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:; connect-src 'self'; form-action 'self'; object-src 'none'; base-uri 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; script-src 'self' https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:; connect-src 'self'; form-action 'self' https://formsubmit.co; object-src 'none'; base-uri 'self';">
     <meta name="referrer" content="no-referrer">
     <title>Portfolio | Exercices Java POO</title>
     <!-- Ressources visuelles communes du portfolio. -->
@@ -20,46 +20,45 @@
 <!-- Navigation commune vers la page d'accueil et les sections principales. -->
 <nav class="navbar navbar-expand-lg navbar-dark cosmic-nav fixed-top" id="site-nav">
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="../#top">
+        <a class="navbar-brand d-flex align-items-center gap-2" aria-label="Accueil du portfolio" href="../#top">
             <img class="brand-logo" src="../images/logo.png" alt="Logo" width="34" height="34">
-            <span>Mon Portfolio</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Ouvrir le menu">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="../#a-propos">A propos</a></li>
+                <li class="nav-item"><a class="nav-link" href="../#a-propos">À propos</a></li>
                 <li class="nav-item"><a class="nav-link" href="../#parcours">Parcours</a></li>
                 <li class="nav-item"><a class="nav-link" href="../#projets">Projets</a></li>
-                <li class="nav-item"><a class="nav-link" href="../#competences">Competences</a></li>
+                <li class="nav-item"><a class="nav-link" href="../#competences">Compétences</a></li>
                 <li class="nav-item"><a class="nav-link" href="../#contact">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="../mentions-legales/">Mentions legales</a></li>
-                <li class="nav-item"><a class="nav-link" href="../politique-confidentialite/">Confidentialite</a></li>
+                <li class="nav-item"><a class="nav-link" href="../mentions-legales/">Mentions légales</a></li>
+                <li class="nav-item"><a class="nav-link" href="../politique-confidentialite/">Confidentialité</a></li>
                 <li class="nav-item"><a class="nav-link" href="../downloads/cv.pdf" target="_blank" rel="noopener noreferrer"><i class="bi bi-file-earmark-arrow-down"></i> CV</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<!-- Contenu detaille des exercices Java POO. -->
+<!-- Contenu détaillé des exercices Java POO. -->
 <main class="section-block">
     <div class="container">
         <div class="section-header">
             <p class="section-kicker">Projet</p>
             <h1 class="section-title">Exercices Java POO</h1>
-            <p class="section-desc">Serie d'exercices pour consolider les bases de la programmation orientee objet.</p>
+            <p class="section-desc">Série d'exercices pour consolider les bases de la programmation orientée objet.</p>
         </div>
         <div class="row g-4">
             <div class="col-lg-8">
                 <div class="glass-card">
                     <h5>Objectif</h5>
-                    <p>Appliquer les notions d'heritage, de polymorphisme et d'abstraction a travers des cas pratiques.</p>
+                    <p>Appliquer les notions d'héritage, de polymorphisme et d'abstraction à travers des cas pratiques.</p>
                     <h5 class="mt-4">Contenu principal</h5>
                     <ul class="mb-0">
-                        <li>Classes abstraites et implementations concretes (Shape, Circle, Rectangle).</li>
-                        <li>Hierarchies d'objets pour modeliser des animaux.</li>
-                        <li>Methodes polymorphes et bonnes pratiques de POO.</li>
+                        <li>Classes abstraites et implémentations concrètes (Shape, Circle, Rectangle).</li>
+                        <li>Hiérarchies d'objets pour modeliser des animaux.</li>
+                        <li>Méthodes polymorphes et bonnes pratiques de POO.</li>
                     </ul>
                 </div>
             </div>
@@ -67,7 +66,7 @@
                 <div class="glass-card">
                     <p class="text-uppercase small mb-2 text-muted">Stack</p>
                     <div class="tags">
-                        <span>Java</span><span>POO</span><span>Heritage</span><span>Polymorphisme</span>
+                        <span>Java</span><span>POO</span><span>Héritage</span><span>Polymorphisme</span>
                     </div>
                     <p class="text-uppercase small mb-2 mt-4 text-muted">Contexte</p>
                     <p class="mb-0 text-muted">Travaux pratiques BTS SIO.</p>
