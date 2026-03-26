@@ -49,7 +49,8 @@ Pour arreter le serveur: `Ctrl + C`
 - `projet-tpformula1/index.html`, `projet-jmi56/index.html`, `projet-java-poo/index.html`: pages de details projets (clean URL FR)
 - `projet1/index.html`, `projet2/index.html`, `projet3/index.html`: anciennes routes conservees pour compatibilite
 - `projet1.html`, `projet2.html`, `projet3.html`: redirections vers les clean URLs
-- `mentions-legales/index.html`, `politique-confidentialite/index.html`: pages legales (RGPD)
+- `mentions-legales.html`, `politique-confidentialite.html`: pages legales (RGPD)
+- `mentions-legales/index.html`, `politique-confidentialite/index.html`: redirections de compatibilite vers les pages legales racine
 - `message-envoye/index.html`: page de confirmation apres envoi du formulaire
 - `style.css`: styles globaux
 - `main.js`: interactions (theme, retour en haut, envoi du formulaire)
@@ -77,7 +78,7 @@ Pour arreter le serveur: `Ctrl + C`
 - Le formulaire de contact envoie les messages vers `teo.champeval@gmail.com` via FormSubmit.
 - Apres soumission reussie, FormSubmit redirige vers la clean URL `message-envoye/`.
 - Si la page est ouverte en `file://` (double-clic sur `index.html`), le formulaire bascule automatiquement en `mailto` pour eviter l'erreur FormSubmit.
-- Les liens de footer incluent les pages `mentions-legales` et `politique-confidentialite`.
+- Les liens de footer incluent les pages `mentions-legales.html` et `politique-confidentialite.html`.
 
 ## RGPD / CNIL
 

@@ -1,4 +1,4 @@
-// =========================================================
+﻿// =========================================================
 // UI: bouton de retour en haut
 // =========================================================
 // Affiche un bouton flottant des que la page est suffisamment scrollee.
@@ -101,18 +101,45 @@ const setCookieNoticeAcknowledged = () => {
         // Ignore les navigateurs qui bloquent le stockage local.
     }
 };
+const hasExternalResources = () => {
+    const selectors = 'script[src], link[href]';
+    const resources = document.querySelectorAll(selectors);
+    for (const resource of resources) {
+        const source = resource.getAttribute('src') || resource.getAttribute('href');
+        if (!source) {
+            continue;
+        }
+        try {
+            const url = new URL(source, window.location.href);
+            const isHttp = url.protocol === 'http:' || url.protocol === 'https:';
+            if (isHttp && url.origin !== window.location.origin) {
+                return true;
+            }
+        } catch (error) {
+            // Ignore les URL invalides.
+        }
+    }
+    return false;
+};
+const resolveSiteUrl = (targetFile) => {
+    const mainScript = document.querySelector('script[src$="main.js"], script[src*="main.js?"]');
+    const baseUrl = mainScript?.src ? new URL('.', mainScript.src) : new URL('.', window.location.href);
+    return new URL(targetFile, baseUrl).toString();
+};
 const createCookieNotice = () => {
+    const privacyUrl = resolveSiteUrl('politique-confidentialite.html');
+    const legalUrl = resolveSiteUrl('mentions-legales.html');
     const notice = document.createElement('aside');
     notice.className = 'cookie-notice';
     notice.setAttribute('role', 'status');
     notice.setAttribute('aria-live', 'polite');
     notice.innerHTML = `
         <p class="cookie-notice-text mb-2 mb-md-0">
-            Ce site n'utilise pas de cookies publicitaires. Une préférence locale peut être enregistrée pour mémoriser la fermeture de ce message.
-            <a href="/politique-confidentialite/">Politique de confidentialité</a>.
+            Ce site charge des ressources externes (CDN/polices), qui peuvent traiter des donnees techniques comme l'adresse IP.
+            <a href="${privacyUrl}">Politique de confidentialite</a>.
         </p>
         <div class="cookie-notice-actions">
-            <a class="btn btn-outline-light btn-sm" href="/mentions-legales/">Mentions légales</a>
+            <a class="btn btn-outline-light btn-sm" href="${legalUrl}">Mentions legales</a>
             <button type="button" class="btn btn-primary btn-sm" data-cookie-notice-close>J'ai compris</button>
         </div>
     `;
@@ -126,14 +153,14 @@ const createCookieNotice = () => {
         window.setTimeout(() => notice.remove(), 240);
     });
 };
-if (!hasAcknowledgedCookieNotice()) {
+if (hasExternalResources() && !hasAcknowledgedCookieNotice()) {
     createCookieNotice();
 }
 
 // =========================================================
 // Effet visuel: etoiles filantes suiveuses de souris
 // =========================================================
-// Trainee "etoiles filantes" liée au mouvement de la souris (desktop uniquement).
+// Trainee "etoiles filantes" liÃ©e au mouvement de la souris (desktop uniquement).
 const supportsFinePointer = window.matchMedia('(pointer: fine)').matches;
 const supportsHover = window.matchMedia('(hover: hover)').matches;
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -150,7 +177,7 @@ if (supportsFinePointer && supportsHover && !prefersReducedMotion) {
     let previousTime = 0;
     let lastSpawnTime = 0;
 
-    // Genere une particule orientée selon le mouvement courant de la souris.
+    // Genere une particule orientÃ©e selon le mouvement courant de la souris.
     const spawnStar = (x, y, vectorX, vectorY, speedFactor, isInteractiveZone) => {
         const norm = Math.hypot(vectorX, vectorY) || 1;
         const directionX = vectorX / norm;
@@ -238,3 +265,4 @@ if (supportsFinePointer && supportsHover && !prefersReducedMotion) {
 // Theme unique: sombre uniquement.
 document.body.classList.add('theme-dark');
 document.body.classList.remove('theme-light');
+
