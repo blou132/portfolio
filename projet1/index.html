@@ -1,7 +1,7 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Meta de base + sÃ©curitÃ© CSP pour la page projet (route legacy). -->
+    <!-- Meta de base + sécurité CSP pour la page projet (route legacy). -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; script-src 'self' https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:; connect-src 'self'; form-action 'self' https://formsubmit.co; object-src 'none'; base-uri 'self';">
@@ -28,60 +28,60 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="../#a-propos">Ã€ propos</a></li>
+                <li class="nav-item"><a class="nav-link" href="../#a-propos">À propos</a></li>
                 <li class="nav-item"><a class="nav-link" href="../#parcours">Parcours</a></li>
                 <li class="nav-item"><a class="nav-link" href="../#projets">Projets</a></li>
-                <li class="nav-item"><a class="nav-link" href="../#competences">CompÃ©tences</a></li>
+                <li class="nav-item"><a class="nav-link" href="../#competences">Compétences</a></li>
                 <li class="nav-item"><a class="nav-link" href="../#contact">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="../mentions-legales.html">Mentions lÃ©gales</a></li>
-                <li class="nav-item"><a class="nav-link" href="../politique-confidentialite.html">ConfidentialitÃ©</a></li>
+                <li class="nav-item"><a class="nav-link" href="../mentions-legales.html">Mentions légales</a></li>
+                <li class="nav-item"><a class="nav-link" href="../politique-confidentialite.html">Confidentialité</a></li>
                 <li class="nav-item"><a class="nav-link" href="../downloads/cv.pdf" target="_blank" rel="noopener noreferrer"><i class="bi bi-file-earmark-arrow-down"></i> CV</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<!-- Contenu dÃ©taillÃ© du projet TPFormula1 (version route legacy). -->
+<!-- Contenu détaillé du projet TPFormula1 (version route legacy). -->
 <main class="section-block">
     <div class="container">
         <div class="section-header">
             <p class="section-kicker">Projet</p>
             <h1 class="section-title">TPFormula1 - Gestion F1</h1>
-            <p class="section-desc">Application web PHP / MySQL orientÃ©e gestion de championnat: suivi des Grands Prix, Ã©curies et pilotes avec un back-office sÃ©curisÃ©.</p>
+            <p class="section-desc">Application web PHP / MySQL orientée gestion de championnat: suivi des Grands Prix, écuries et pilotes avec un back-office sécurisé.</p>
         </div>
 
         <div class="row g-4">
             <div class="col-lg-8">
                 <article class="glass-card mb-4">
-                    <h5>Objectif mÃ©tier</h5>
-                    <p>Construire un outil simple pour centraliser les donnÃ©es F1 et accÃ©lÃ©rer les opÃ©rations courantes: ajout, modification, suppression et consultation des Ã©lÃ©ments de saison.</p>
-                    <h5 class="mt-4">FonctionnalitÃ©s dÃ©taillÃ©es</h5>
+                    <h5>Objectif métier</h5>
+                    <p>Construire un outil simple pour centraliser les données F1 et accélérer les opérations courantes: ajout, modification, suppression et consultation des éléments de saison.</p>
+                    <h5 class="mt-4">Fonctionnalités détaillées</h5>
                     <ul class="mb-0">
-                        <li>CRUD complet sur trois entitÃ©s principales: Grands Prix, Ã©curies, pilotes.</li>
-                        <li>Tableau de bord avec indicateurs rapides (volumÃ©trie et vue calendrier).</li>
+                        <li>CRUD complet sur trois entités principales: Grands Prix, écuries, pilotes.</li>
+                        <li>Tableau de bord avec indicateurs rapides (volumétrie et vue calendrier).</li>
                         <li>Recherche et tri pour retrouver vite une course ou un pilote.</li>
                         <li>Authentification avec protection des actions sensibles.</li>
-                        <li>Script de bootstrap de base via <code>init_db.php</code> pour dÃ©marrage rapide.</li>
+                        <li>Script de bootstrap de base via <code>init_db.php</code> pour démarrage rapide.</li>
                     </ul>
                 </article>
 
                 <article class="glass-card mb-4">
                     <h5>Architecture technique</h5>
                     <ul class="mb-0">
-                        <li>Pattern MVC lÃ©ger: sÃ©paration claire entre contrÃ´leurs, modÃ¨les et vues.</li>
-                        <li>AccÃ¨s base en PDO avec requÃªtes prÃ©parÃ©es pour fiabilitÃ© et sÃ©curitÃ©.</li>
-                        <li>Validation cÃ´tÃ© serveur des champs critiques avant Ã©criture SQL.</li>
-                        <li>Organisation du code pour faciliter les Ã©volutions futures (nouvelles entitÃ©s, filtres, stats).</li>
+                        <li>Pattern MVC léger: séparation claire entre contrôleurs, modèles et vues.</li>
+                        <li>Accès base en PDO avec requêtes préparées pour fiabilité et sécurité.</li>
+                        <li>Validation côté serveur des champs critiques avant écriture SQL.</li>
+                        <li>Organisation du code pour faciliter les évolutions futures (nouvelles entités, filtres, stats).</li>
                     </ul>
                 </article>
 
                 <article class="glass-card">
-                    <h5>DifficultÃ©s et rÃ©sultats</h5>
+                    <h5>Difficultés et résultats</h5>
                     <ul class="mb-0">
-                        <li><strong>DifficultÃ©:</strong> garder la cohÃ©rence entre pilotes, Ã©curies et calendrier.</li>
-                        <li><strong>RÃ©ponse:</strong> rÃ¨gles de validation mÃ©tier + structuration des opÃ©rations CRUD.</li>
-                        <li><strong>RÃ©sultat:</strong> application stable, rapide Ã  prendre en main et facile Ã  dÃ©montrer.</li>
-                        <li><strong>Apprentissages:</strong> modÃ©lisation SQL, sÃ©curisation des formulaires, conception MVC.</li>
+                        <li><strong>Difficulté:</strong> garder la cohérence entre pilotes, écuries et calendrier.</li>
+                        <li><strong>Réponse:</strong> règles de validation métier + structuration des opérations CRUD.</li>
+                        <li><strong>Résultat:</strong> application stable, rapide à prendre en main et facile à démontrer.</li>
+                        <li><strong>Apprentissages:</strong> modélisation SQL, sécurisation des formulaires, conception MVC.</li>
                     </ul>
                 </article>
             </div>
@@ -95,11 +95,11 @@
                 </aside>
 
                 <aside class="glass-card mb-4">
-                    <p class="text-uppercase small mb-2 text-muted">RÃ´le</p>
+                    <p class="text-uppercase small mb-2 text-muted">Rôle</p>
                     <p class="mb-2 text-muted">Projet solo BTS SIO.</p>
                     <ul class="mb-0 text-muted">
-                        <li>Conception du schÃ©ma de donnÃ©es.</li>
-                        <li>DÃ©veloppement complet du back-office.</li>
+                        <li>Conception du schéma de données.</li>
+                        <li>Développement complet du back-office.</li>
                         <li>Tests fonctionnels et corrections.</li>
                     </ul>
                 </aside>
@@ -109,7 +109,7 @@
                     <ul class="mb-0 text-muted">
                         <li>Base propre et initialisable rapidement.</li>
                         <li>Interface admin simple et efficace.</li>
-                        <li>Logique mÃ©tier claire pour soutenance.</li>
+                        <li>Logique métier claire pour soutenance.</li>
                     </ul>
                 </aside>
             </div>

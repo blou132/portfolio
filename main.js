@@ -1,4 +1,4 @@
-﻿// =========================================================
+// =========================================================
 // UI: bouton de retour en haut
 // =========================================================
 // Affiche un bouton flottant des que la page est suffisamment scrollee.
@@ -160,7 +160,7 @@ if (hasExternalResources() && !hasAcknowledgedCookieNotice()) {
 // =========================================================
 // Effet visuel: etoiles filantes suiveuses de souris
 // =========================================================
-// Trainee "etoiles filantes" liÃ©e au mouvement de la souris (desktop uniquement).
+// Trainee "etoiles filantes" liée au mouvement de la souris (desktop uniquement).
 const supportsFinePointer = window.matchMedia('(pointer: fine)').matches;
 const supportsHover = window.matchMedia('(hover: hover)').matches;
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -177,7 +177,7 @@ if (supportsFinePointer && supportsHover && !prefersReducedMotion) {
     let previousTime = 0;
     let lastSpawnTime = 0;
 
-    // Genere une particule orientÃ©e selon le mouvement courant de la souris.
+    // Genere une particule orientée selon le mouvement courant de la souris.
     const spawnStar = (x, y, vectorX, vectorY, speedFactor, isInteractiveZone) => {
         const norm = Math.hypot(vectorX, vectorY) || 1;
         const directionX = vectorX / norm;

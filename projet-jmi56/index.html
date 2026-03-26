@@ -1,7 +1,7 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Meta de base + sÃ©curitÃ© CSP pour la page projet. -->
+    <!-- Meta de base + sécurité CSP pour la page projet. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; script-src 'self' https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:; connect-src 'self'; form-action 'self' https://formsubmit.co; object-src 'none'; base-uri 'self';">
@@ -28,60 +28,60 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="../#a-propos">Ã€ propos</a></li>
+                <li class="nav-item"><a class="nav-link" href="../#a-propos">À propos</a></li>
                 <li class="nav-item"><a class="nav-link" href="../#parcours">Parcours</a></li>
                 <li class="nav-item"><a class="nav-link" href="../#projets">Projets</a></li>
-                <li class="nav-item"><a class="nav-link" href="../#competences">CompÃ©tences</a></li>
+                <li class="nav-item"><a class="nav-link" href="../#competences">Compétences</a></li>
                 <li class="nav-item"><a class="nav-link" href="../#contact">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="../mentions-legales.html">Mentions lÃ©gales</a></li>
-                <li class="nav-item"><a class="nav-link" href="../politique-confidentialite.html">ConfidentialitÃ©</a></li>
+                <li class="nav-item"><a class="nav-link" href="../mentions-legales.html">Mentions légales</a></li>
+                <li class="nav-item"><a class="nav-link" href="../politique-confidentialite.html">Confidentialité</a></li>
                 <li class="nav-item"><a class="nav-link" href="../downloads/cv.pdf" target="_blank" rel="noopener noreferrer"><i class="bi bi-file-earmark-arrow-down"></i> CV</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<!-- Contenu dÃ©taillÃ© du projet JMI 56. -->
+<!-- Contenu détaillé du projet JMI 56. -->
 <main class="section-block">
     <div class="container">
         <div class="section-header">
             <p class="section-kicker">Projet</p>
-            <h1 class="section-title">JMI 56 - Site pour rÃ©parateur informatique</h1>
-            <p class="section-desc">Projet Laravel en Ã©quipe pour un besoin rÃ©el: prÃ©senter les services, capter des demandes clients et suivre leur traitement dans un espace admin.</p>
+            <h1 class="section-title">JMI 56 - Site pour réparateur informatique</h1>
+            <p class="section-desc">Projet Laravel en équipe pour un besoin réel: présenter les services, capter des demandes clients et suivre leur traitement dans un espace admin.</p>
         </div>
 
         <div class="row g-4">
             <div class="col-lg-8">
                 <article class="glass-card mb-4">
-                    <h5>Objectif mÃ©tier</h5>
-                    <p>Mettre en ligne une vitrine professionnelle pour un rÃ©parateur local de Ploermel, avec un tunnel de contact exploitable cÃ´tÃ© back-office.</p>
-                    <h5 class="mt-4">FonctionnalitÃ©s dÃ©taillÃ©es</h5>
+                    <h5>Objectif métier</h5>
+                    <p>Mettre en ligne une vitrine professionnelle pour un réparateur local de Ploermel, avec un tunnel de contact exploitable côté back-office.</p>
+                    <h5 class="mt-4">Fonctionnalités détaillées</h5>
                     <ul class="mb-0">
-                        <li>Pages publiques claires: prÃ©sentation, services, zone d'intervention, contact.</li>
+                        <li>Pages publiques claires: présentation, services, zone d'intervention, contact.</li>
                         <li>Formulaire de contact avec collecte des infos utiles pour qualification.</li>
                         <li>Espace admin pour visualiser et traiter les demandes.</li>
                         <li>Workflow de suivi des tickets: <code>Demandes</code> -> <code>En cours</code> -> <code>Termine</code>.</li>
-                        <li>IntÃ©gration Google Maps avec fallback en cas de blocage d'API.</li>
+                        <li>Intégration Google Maps avec fallback en cas de blocage d'API.</li>
                     </ul>
                 </article>
 
                 <article class="glass-card mb-4">
                     <h5>Architecture technique</h5>
                     <ul class="mb-0">
-                        <li>Framework Laravel 12, routes web propres et sÃ©paration front/back-office.</li>
-                        <li>ModÃ¨les Eloquent pour les entitÃ©s mÃ©tier (demandes, utilisateurs, statuts).</li>
-                        <li>Validation serveur des formulaires via les rÃ¨gles Laravel.</li>
+                        <li>Framework Laravel 12, routes web propres et séparation front/back-office.</li>
+                        <li>Modèles Eloquent pour les entités métier (demandes, utilisateurs, statuts).</li>
+                        <li>Validation serveur des formulaires via les règles Laravel.</li>
                         <li>Protection standard Laravel: middleware auth, token CSRF, gestion de session.</li>
                     </ul>
                 </article>
 
                 <article class="glass-card">
-                    <h5>Travail d'Ã©quipe et resultat</h5>
+                    <h5>Travail d'équipe et resultat</h5>
                     <ul class="mb-0">
-                        <li><strong>Organisation:</strong> rÃ©partition front/back, points de synchro et validation commune.</li>
-                        <li><strong>DifficultÃ©:</strong> fiabiliser le passage des demandes entre statuts sans perdre d'information.</li>
-                        <li><strong>RÃ©ponse:</strong> logique de traitement explicite + tests manuels de scÃ©nario.</li>
-                        <li><strong>RÃ©sultat:</strong> site exploitable en dÃ©mo client et facile a maintenir.</li>
+                        <li><strong>Organisation:</strong> répartition front/back, points de synchro et validation commune.</li>
+                        <li><strong>Difficulté:</strong> fiabiliser le passage des demandes entre statuts sans perdre d'information.</li>
+                        <li><strong>Réponse:</strong> logique de traitement explicite + tests manuels de scénario.</li>
+                        <li><strong>Résultat:</strong> site exploitable en démo client et facile a maintenir.</li>
                     </ul>
                 </article>
             </div>
@@ -95,17 +95,17 @@
                 </aside>
 
                 <aside class="glass-card mb-4">
-                    <p class="text-uppercase small mb-2 text-muted">Contexte Ã©quipe</p>
-                    <p class="mb-2 text-muted">Projet rÃ©alisÃ© avec Maxime.</p>
+                    <p class="text-uppercase small mb-2 text-muted">Contexte équipe</p>
+                    <p class="mb-2 text-muted">Projet réalisé avec Maxime.</p>
                     <p class="mb-0 text-muted">GitHub: <a href="https://github.com/obSSi" target="_blank" rel="noopener noreferrer">obSSi</a></p>
                 </aside>
 
                 <aside class="glass-card">
                     <p class="text-uppercase small mb-2 text-muted">Apprentissages</p>
                     <ul class="mb-0 text-muted">
-                        <li>Structuration d'un projet Laravel rÃ©el.</li>
+                        <li>Structuration d'un projet Laravel réel.</li>
                         <li>Gestion de cycle de vie d'une demande client.</li>
-                        <li>Collaboration Git et revue de code en binÃ´me.</li>
+                        <li>Collaboration Git et revue de code en binôme.</li>
                     </ul>
                 </aside>
             </div>
