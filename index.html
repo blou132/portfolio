@@ -6,7 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; script-src 'self' https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:; connect-src 'self'; form-action 'self' https://formsubmit.co; object-src 'none'; base-uri 'self';">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <title>Bienvenue sur mon portfolio</title>
+    <meta name="description" content="Portfolio de Téo Champeval, étudiant en BTS SIO SLAM. Projets PHP, Laravel et MySQL, compétences en cybersécurité web, disponible pour stage et alternance.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="Téo Champeval">
+    <meta name="theme-color" content="#07152d">
+    <title>Portfolio développeur web junior PHP Laravel | Téo Champeval</title>
+    <link rel="canonical" href="https://teo-infra.fr/">
+    <link rel="alternate" hreflang="fr-FR" href="https://teo-infra.fr/">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Portfolio développeur web junior PHP Laravel | Téo Champeval">
+    <meta property="og:description" content="Découvrez mes projets web PHP/Laravel, mes compétences SQL/MySQL et mon objectif cybersécurité.">
+    <meta property="og:url" content="https://teo-infra.fr/">
+    <meta property="og:site_name" content="Portfolio Téo Champeval">
+    <meta property="og:image" content="https://teo-infra.fr/images/logo.png?v=20260401">
+    <meta property="og:image:alt" content="Logo du portfolio de Téo Champeval">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portfolio développeur web junior PHP Laravel | Téo Champeval">
+    <meta name="twitter:description" content="Projets concrets en PHP, Laravel, MySQL et progression vers la cybersécurité.">
+    <meta name="twitter:image" content="https://teo-infra.fr/images/logo.png?v=20260401">
     <!-- Favicon, framework UI et typographie. -->
     <link rel="icon" href="images/favicon-v2.png?v=20260401" type="image/png">
     <link rel="shortcut icon" href="/favicon.ico?v=20260401">
@@ -17,19 +35,72 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Feuille de style principale du site. -->
     <link rel="stylesheet" href="style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "name": "Téo Champeval",
+          "url": "https://teo-infra.fr/",
+          "image": "https://teo-infra.fr/images/logo.png?v=20260401",
+          "email": "mailto:teo.champeval@gmail.com",
+          "jobTitle": "Étudiant développeur web (BTS SIO SLAM)",
+          "sameAs": [
+            "https://github.com/blou132"
+          ],
+          "knowsAbout": [
+            "PHP",
+            "Laravel",
+            "MySQL",
+            "JavaScript",
+            "Bootstrap",
+            "Cybersécurité web"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "name": "Portfolio Téo Champeval",
+          "url": "https://teo-infra.fr/",
+          "inLanguage": "fr-FR"
+        },
+        {
+          "@type": "ItemList",
+          "name": "Projets du portfolio",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "TPFormula1 - Gestion F1",
+              "url": "https://teo-infra.fr/projet-tpformula1/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Projet 2 - Site d'artisan",
+              "url": "https://teo-infra.fr/projet2/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Exercices Java POO",
+              "url": "https://teo-infra.fr/projet-java-poo/"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="theme-dark" data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="100" tabindex="0">
 <!-- Navigation globale: ancres internes + acces CV + liens legaux. -->
 <nav class="navbar navbar-expand-lg navbar-dark cosmic-nav fixed-top" id="site-nav">
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2" aria-label="Accueil du portfolio" href="#top">
-            <img class="brand-logo" src="images/logo.png" alt="Logo" width="34" height="34">
-        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Ouvrir le menu">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav mx-auto text-center">
                 <li class="nav-item"><a class="nav-link" href="#a-propos">À propos</a></li>
                 <li class="nav-item"><a class="nav-link" href="#parcours">Parcours</a></li>
                 <li class="nav-item"><a class="nav-link" href="#projets">Projets</a></li>
@@ -46,7 +117,7 @@
     <div class="container position-relative">
         <p class="hero-eyebrow text-uppercase">BTS SIO SLAM - 2e année</p>
         <h1>Portfolio de développeur</h1>
-        <p class="hero-lead">Étudiant en BTS SIO, je construis des applications PHP et Laravel orientées métier, avec une base SQL propre, une interface responsive et un intérêt fort pour la cybersécurité.</p>
+        <p class="hero-lead">Étudiant en BTS SIO, je construis des applications PHP et Laravel orientées métier, avec une base SQL propre, une interface responsive et un intérêt fort pour la cybersécurité. Disponible pour stage et alternance.</p>
         <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
             <a class="btn btn-primary btn-projet" href="#projets"><i class="bi bi-rocket-takeoff me-2"></i>Voir mes projets</a>
             <a class="btn btn-outline-light" href="#contact"><i class="bi bi-envelope me-2"></i>Me contacter</a>

@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Pages techniques / legacy non prioritaires pour le SEO
+Disallow: /message-envoye/
+Disallow: /projet1/
+Disallow: /projet3/
+Disallow: /projet-jmi56/
+Disallow: /projet1.html
+Disallow: /projet2.html
+Disallow: /projet3.html
+Disallow: /mentions-legales/
+Disallow: /politique-confidentialite/
+
+Sitemap: https://teo-infra.fr/sitemap.xml

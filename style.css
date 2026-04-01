@@ -88,6 +88,19 @@ body::after {
     letter-spacing: 0.01em;
 }
 
+.navbar .navbar-collapse {
+    justify-content: center;
+}
+
+.navbar .navbar-nav {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar .navbar-toggler {
+    margin-left: auto;
+}
+
 .navbar-brand {
     font-weight: 700;
 }
