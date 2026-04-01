@@ -432,14 +432,27 @@ body::after {
 }
 
 .btn-outline-light {
-    color: var(--text);
-    border: 1px solid var(--border);
-    background: rgba(255, 255, 255, 0.05);
+    --bs-btn-color: var(--text);
+    --bs-btn-border-color: var(--border);
+    --bs-btn-bg: rgba(255, 255, 255, 0.05);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: rgba(63, 162, 255, 0.18);
+    --bs-btn-hover-border-color: var(--primary-strong);
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: rgba(63, 162, 255, 0.24);
+    --bs-btn-active-border-color: var(--primary-strong);
+    --bs-btn-focus-shadow-rgb: 63, 162, 255;
+    color: var(--bs-btn-color);
+    border: 1px solid var(--bs-btn-border-color);
+    background: var(--bs-btn-bg);
 }
 
-.btn-outline-light:hover {
-    border-color: var(--primary-strong);
-    color: #fff;
+.btn-outline-light:hover,
+.btn-outline-light:focus-visible,
+.btn-outline-light:active {
+    border-color: var(--bs-btn-hover-border-color);
+    color: var(--bs-btn-hover-color);
+    background: var(--bs-btn-hover-bg);
 }
 
 /* Champs de formulaire. */
@@ -733,15 +746,26 @@ body::after {
 }
 
 .theme-light .btn-outline-light {
-    color: #1c2140;
-    background: rgba(33, 85, 217, 0.08);
-    border-color: rgba(33, 85, 217, 0.25);
+    --bs-btn-color: #1c2140;
+    --bs-btn-border-color: rgba(33, 85, 217, 0.25);
+    --bs-btn-bg: rgba(33, 85, 217, 0.08);
+    --bs-btn-hover-color: #0f172a;
+    --bs-btn-hover-bg: rgba(33, 85, 217, 0.16);
+    --bs-btn-hover-border-color: rgba(33, 85, 217, 0.4);
+    --bs-btn-active-color: #0f172a;
+    --bs-btn-active-bg: rgba(33, 85, 217, 0.22);
+    --bs-btn-active-border-color: rgba(33, 85, 217, 0.45);
+    color: var(--bs-btn-color);
+    background: var(--bs-btn-bg);
+    border-color: var(--bs-btn-border-color);
 }
 
-.theme-light .btn-outline-light:hover {
-    color: #0f172a;
-    background: rgba(33, 85, 217, 0.16);
-    border-color: rgba(33, 85, 217, 0.4);
+.theme-light .btn-outline-light:hover,
+.theme-light .btn-outline-light:focus-visible,
+.theme-light .btn-outline-light:active {
+    color: var(--bs-btn-hover-color);
+    background: var(--bs-btn-hover-bg);
+    border-color: var(--bs-btn-hover-border-color);
 }
 
 .theme-light .contact-link {

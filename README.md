@@ -46,8 +46,8 @@ Pour arreter le serveur: `Ctrl + C`
 ## Structure du projet
 
 - `index.html`: page principale
-- `projet-tpformula1/index.html`, `projet-jmi56/index.html`, `projet-java-poo/index.html`: pages de details projets (clean URL FR)
-- `projet1/index.html`, `projet2/index.html`, `projet3/index.html`: anciennes routes conservees pour compatibilite
+- `projet-tpformula1/index.html`, `projet2/index.html`, `projet-java-poo/index.html`: pages de details projets (clean URL FR)
+- `projet1/index.html`, `projet3/index.html` + ancienne route du projet 2: routes conservees pour compatibilite
 - `projet1.html`, `projet2.html`, `projet3.html`: redirections vers les clean URLs
 - `mentions-legales.html`, `politique-confidentialite.html`: pages legales (RGPD)
 - `mentions-legales/index.html`, `politique-confidentialite/index.html`: redirections de compatibilite vers les pages legales racine
@@ -60,14 +60,14 @@ Pour arreter le serveur: `Ctrl + C`
 ## Depots GitHub
 
 - TPFormula1: `https://github.com/blou132/projet_bts1.git`
-- JMI 56: `https://github.com/blou132/projet_bts2.git`
+- Projet 2: `https://github.com/blou132/projet_bts2.git`
 - Cours: `https://github.com/blou132/cour.git`
 
 ## Notes
 
 - URLs propres activees:
   - `http://localhost:3000/projet-tpformula1/`
-  - `http://localhost:3000/projet-jmi56/`
+  - `http://localhost:3000/projet2/`
   - `http://localhost:3000/projet-java-poo/`
   - `http://localhost:3000/message-envoye/`
 - Ancres propres en francais:
