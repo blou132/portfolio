@@ -29,7 +29,7 @@ if (mappedHash) {
 // =========================================================
 // Formulaire de contact
 // =========================================================
-// Le formulaire envoie les donnees vers FormSubmit puis redirige vers une page de confirmation.
+// Le formulaire envoie les données vers FormSubmit puis redirige vers une page de confirmation.
 const contactForm = document.getElementById('contact-form');
 const isFileProtocol = window.location.protocol === 'file:';
 if (contactForm) {
@@ -135,11 +135,11 @@ const createCookieNotice = () => {
     notice.setAttribute('aria-live', 'polite');
     notice.innerHTML = `
         <p class="cookie-notice-text mb-2 mb-md-0">
-            Ce site charge des ressources externes (CDN/polices), qui peuvent traiter des donnees techniques comme l'adresse IP.
-            <a href="${privacyUrl}">Politique de confidentialite</a>.
+            Ce site charge des ressources externes (CDN/polices), qui peuvent traiter des données techniques comme l'adresse IP.
+            <a href="${privacyUrl}">Politique de confidentialité</a>.
         </p>
         <div class="cookie-notice-actions">
-            <a class="btn btn-outline-light btn-sm" href="${legalUrl}">Mentions legales</a>
+            <a class="btn btn-outline-light btn-sm" href="${legalUrl}">Mentions légales</a>
             <button type="button" class="btn btn-primary btn-sm" data-cookie-notice-close>J'ai compris</button>
         </div>
     `;
