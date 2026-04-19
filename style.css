@@ -354,14 +354,6 @@ body::after {
 }
 
 /* Cartes projets + tags techniques. */
-.github-projects-status {
-    margin-bottom: 18px;
-}
-
-.github-projects-status.is-error {
-    color: #ffb8b8 !important;
-}
-
 .project-card {
     height: 100%;
 }
@@ -756,10 +748,6 @@ body::after {
     background: rgba(33, 85, 217, 0.08);
     border-color: rgba(33, 85, 217, 0.2);
     color: #2a3858;
-}
-
-.theme-light .github-projects-status.is-error {
-    color: #a52834 !important;
 }
 
 .theme-light .timeline-item::before {
