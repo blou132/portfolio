@@ -6,6 +6,7 @@
     --bg-soft: rgba(16, 34, 64, 0.8);
     --primary: #3fa2ff;
     --primary-strong: #68c3ff;
+    --primary-violet: #8f75ff;
     --text: #e9f0ff;
     --muted: #94a8c9;
     --input-bg: rgba(255, 255, 255, 0.1);
@@ -17,6 +18,8 @@
     --card: rgba(13, 26, 52, 0.75);
     --shadow: 0 15px 45px rgba(23, 63, 122, 0.35);
     --radius: 16px;
+    --glow-blue: rgba(88, 182, 255, 0.35);
+    --glow-violet: rgba(143, 117, 255, 0.24);
 }
 
 /* Palette alternative conservee pour compatibilite future (non activee par defaut). */
@@ -42,9 +45,11 @@
 
 /* Fond global spatial: gradients + texture d'etoiles. */
 body {
+    --parallax-offset: 0px;
     font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
     background:
         radial-gradient(circle at 20% 20%, rgba(63, 162, 255, 0.12), transparent 30%),
+        radial-gradient(circle at 72% 18%, rgba(143, 117, 255, 0.08), transparent 34%),
         radial-gradient(circle at 80% 10%, rgba(104, 195, 255, 0.1), transparent 35%),
         linear-gradient(180deg, var(--bg-strong), var(--bg));
     color: var(--text);
@@ -65,6 +70,8 @@ body::before {
     background-position: 0 0, 40px 60px;
     opacity: 0.35;
     animation: starfield-drift 46s linear infinite;
+    transform: translate3d(0, calc(var(--parallax-offset) * 0.08), 0);
+    will-change: transform, opacity;
     pointer-events: none;
     z-index: -1;
 }
@@ -75,11 +82,32 @@ body::after {
     position: fixed;
     inset: 0;
     background: radial-gradient(circle at 80% 10%, rgba(63, 162, 255, 0.12), transparent 35%),
-                radial-gradient(circle at 10% 80%, rgba(86, 199, 255, 0.1), transparent 30%);
+                radial-gradient(circle at 10% 80%, rgba(86, 199, 255, 0.1), transparent 30%),
+                radial-gradient(circle at 62% 78%, rgba(143, 117, 255, 0.08), transparent 34%);
     background-size: 120% 120%;
     animation: nebula-drift 18s ease-in-out infinite alternate;
+    transform: translate3d(0, calc(var(--parallax-offset) * 0.16), 0);
+    will-change: transform, opacity;
     pointer-events: none;
     z-index: -2;
+}
+
+/* Troisieme couche d'etoiles pour profondeur parallax. */
+.cosmic-depth-layer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -3;
+    opacity: 0.24;
+    background-image:
+        radial-gradient(rgba(189, 222, 255, 0.22) 0.7px, transparent 1px),
+        radial-gradient(rgba(147, 170, 255, 0.18) 0.7px, transparent 1px);
+    background-size: 260px 260px, 340px 340px;
+    background-position: 0 0, 85px 45px;
+    mix-blend-mode: screen;
+    transform: translate3d(0, calc(var(--parallax-offset) * 0.24), 0);
+    animation: deep-star-drift 64s linear infinite;
+    will-change: transform, opacity;
 }
 
 @keyframes starfield-drift {
@@ -99,6 +127,15 @@ body::after {
     to {
         transform: translate3d(-1.5%, -1%, 0) scale(1.03);
         opacity: 0.85;
+    }
+}
+
+@keyframes deep-star-drift {
+    from {
+        background-position: 0 0, 85px 45px;
+    }
+    to {
+        background-position: 130px 96px, 210px 182px;
     }
 }
 
@@ -195,7 +232,12 @@ body::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(160deg, rgba(16, 30, 64, 0.6), rgba(5, 12, 29, 0.8));
+    background:
+        radial-gradient(circle at 22% 14%, rgba(99, 195, 255, 0.18), transparent 34%),
+        radial-gradient(circle at 74% 12%, rgba(143, 117, 255, 0.16), transparent 36%),
+        linear-gradient(160deg, rgba(16, 30, 64, 0.62), rgba(5, 12, 29, 0.84));
+    background-size: 110% 110%;
+    animation: hero-cosmic-pan 14s ease-in-out infinite alternate;
 }
 
 .hero::after {
@@ -205,6 +247,8 @@ body::after {
     background: url('images/photo-1593959734793-6e92d102da1e.jpg') center/cover no-repeat;
     opacity: 0.15;
     mix-blend-mode: screen;
+    transform: translate3d(0, calc(var(--parallax-offset) * 0.12), 0) scale(1.02);
+    will-change: transform;
 }
 
 .hero .container {
@@ -215,7 +259,35 @@ body::after {
 .hero h1 {
     font-size: clamp(2.4rem, 3vw + 1rem, 3.6rem);
     font-weight: 700;
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    text-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        0 0 20px rgba(88, 182, 255, 0.28),
+        0 0 32px rgba(143, 117, 255, 0.16);
+    animation: hero-title-glow 4.8s ease-in-out infinite;
+}
+
+@keyframes hero-cosmic-pan {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: 10% 14%;
+    }
+}
+
+@keyframes hero-title-glow {
+    0%, 100% {
+        text-shadow:
+            0 10px 30px rgba(0, 0, 0, 0.35),
+            0 0 18px rgba(88, 182, 255, 0.24),
+            0 0 28px rgba(143, 117, 255, 0.12);
+    }
+    50% {
+        text-shadow:
+            0 12px 34px rgba(0, 0, 0, 0.42),
+            0 0 24px rgba(88, 182, 255, 0.34),
+            0 0 38px rgba(143, 117, 255, 0.22);
+    }
 }
 
 .hero-lead {
@@ -278,6 +350,7 @@ body::after {
     margin-bottom: 12px;
     font-weight: 700;
     text-transform: none;
+    text-shadow: 0 0 14px rgba(88, 182, 255, 0.12);
 }
 
 .section-desc {
@@ -289,15 +362,18 @@ body::after {
 .reveal-init {
     opacity: 0;
     transform: translate3d(0, 20px, 0);
+    filter: blur(8px);
     transition:
         opacity 300ms ease-out var(--reveal-delay, 0ms),
-        transform 300ms ease-out var(--reveal-delay, 0ms);
-    will-change: opacity, transform;
+        transform 300ms ease-out var(--reveal-delay, 0ms),
+        filter 300ms ease-out var(--reveal-delay, 0ms);
+    will-change: opacity, transform, filter;
 }
 
 .reveal-init.is-visible {
     opacity: 1;
     transform: translate3d(0, 0, 0);
+    filter: blur(0);
 }
 
 /* Zone parcours (timeline). */
@@ -399,7 +475,8 @@ body::after {
     transition:
         transform 200ms ease,
         box-shadow 200ms ease,
-        border-color 200ms ease;
+        border-color 200ms ease,
+        background-color 200ms ease;
 }
 
 .project-card::after {
@@ -407,7 +484,14 @@ body::after {
     position: absolute;
     inset: -1px;
     border-radius: inherit;
-    border: 1px solid rgba(104, 195, 255, 0.38);
+    border: 1px solid transparent;
+    background:
+        linear-gradient(135deg, rgba(88, 182, 255, 0.4), rgba(143, 117, 255, 0.32)) border-box;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
     opacity: 0;
     pointer-events: none;
     transition: opacity 200ms ease;
@@ -426,8 +510,12 @@ body::after {
 .project-card:hover,
 .project-card:focus-within {
     transform: translate3d(0, -6px, 0) scale(1.02);
-    box-shadow: 0 26px 52px rgba(26, 76, 152, 0.52);
+    box-shadow:
+        0 26px 52px rgba(26, 76, 152, 0.45),
+        0 0 28px var(--glow-blue),
+        0 0 36px var(--glow-violet);
     border-color: rgba(104, 195, 255, 0.48);
+    background-color: rgba(15, 31, 60, 0.82);
 }
 
 .project-card:hover::after,
@@ -531,10 +619,14 @@ body::after {
 
 .btn:not(:disabled):hover {
     transform: translate3d(0, 0, 0) scale(1.03);
+    box-shadow:
+        0 14px 34px rgba(63, 162, 255, 0.28),
+        0 0 18px rgba(88, 182, 255, 0.25);
 }
 
 .btn:not(:disabled):active {
     transform: translate3d(0, 0, 0) scale(0.97);
+    box-shadow: 0 6px 14px rgba(63, 162, 255, 0.2);
 }
 
 .btn-primary {
@@ -545,6 +637,10 @@ body::after {
 
 .btn-primary:hover {
     background: linear-gradient(120deg, var(--primary-strong), var(--primary));
+    box-shadow:
+        0 14px 34px rgba(63, 162, 255, 0.35),
+        0 0 22px rgba(88, 182, 255, 0.3),
+        0 0 28px rgba(143, 117, 255, 0.2);
 }
 
 .btn-outline-light {
@@ -569,6 +665,7 @@ body::after {
     border-color: var(--bs-btn-hover-border-color);
     color: var(--bs-btn-hover-color);
     background: var(--bs-btn-hover-bg);
+    box-shadow: 0 0 18px rgba(88, 182, 255, 0.22), 0 0 24px rgba(143, 117, 255, 0.14);
 }
 
 /* Champs de formulaire. */
@@ -734,14 +831,29 @@ body::after {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .cosmic-depth-layer {
+        display: none !important;
+    }
+
     body::before,
     body::after {
         animation: none !important;
+        transform: none !important;
+    }
+
+    .hero::before,
+    .hero h1 {
+        animation: none !important;
+    }
+
+    .hero::after {
+        transform: none !important;
     }
 
     .reveal-init {
         opacity: 1 !important;
         transform: none !important;
+        filter: none !important;
         transition: none !important;
     }
 
