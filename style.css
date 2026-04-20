@@ -64,6 +64,7 @@ body::before {
     background-size: 140px 140px, 220px 220px;
     background-position: 0 0, 40px 60px;
     opacity: 0.35;
+    animation: starfield-drift 46s linear infinite;
     pointer-events: none;
     z-index: -1;
 }
@@ -75,8 +76,30 @@ body::after {
     inset: 0;
     background: radial-gradient(circle at 80% 10%, rgba(63, 162, 255, 0.12), transparent 35%),
                 radial-gradient(circle at 10% 80%, rgba(86, 199, 255, 0.1), transparent 30%);
+    background-size: 120% 120%;
+    animation: nebula-drift 18s ease-in-out infinite alternate;
     pointer-events: none;
     z-index: -2;
+}
+
+@keyframes starfield-drift {
+    from {
+        background-position: 0 0, 40px 60px;
+    }
+    to {
+        background-position: 64px 48px, 110px 136px;
+    }
+}
+
+@keyframes nebula-drift {
+    from {
+        transform: translate3d(0, 0, 0) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translate3d(-1.5%, -1%, 0) scale(1.03);
+        opacity: 0.85;
+    }
 }
 
 /* Navigation principale fixe. */
@@ -262,6 +285,21 @@ body::after {
     color: var(--muted);
 }
 
+/* Reveal au scroll: fluide et leger, sans decalage de layout. */
+.reveal-init {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+    transition:
+        opacity 300ms ease-out var(--reveal-delay, 0ms),
+        transform 300ms ease-out var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+.reveal-init.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
 /* Zone parcours (timeline). */
 .section-journey {
     background: linear-gradient(180deg, rgba(6, 13, 27, 0), rgba(18, 32, 57, 0.26));
@@ -356,6 +394,56 @@ body::after {
 /* Cartes projets + tags techniques. */
 .project-card {
     height: 100%;
+    transform: translate3d(0, 0, 0) scale(1);
+    transform-origin: center;
+    transition:
+        transform 200ms ease,
+        box-shadow 200ms ease,
+        border-color 200ms ease;
+}
+
+.project-card::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    border: 1px solid rgba(104, 195, 255, 0.38);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms ease;
+}
+
+.project-card .tags,
+.project-card .d-grid {
+    transition: transform 200ms ease, opacity 200ms ease;
+}
+
+.project-card .d-grid {
+    transform: translate3d(0, 6px, 0);
+    opacity: 0.93;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+    transform: translate3d(0, -6px, 0) scale(1.02);
+    box-shadow: 0 26px 52px rgba(26, 76, 152, 0.52);
+    border-color: rgba(104, 195, 255, 0.48);
+}
+
+.project-card:hover::after,
+.project-card:focus-within::after {
+    opacity: 1;
+}
+
+.project-card:hover .tags,
+.project-card:focus-within .tags {
+    transform: translate3d(0, -2px, 0);
+}
+
+.project-card:hover .d-grid,
+.project-card:focus-within .d-grid {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
 }
 
 .badge.text-bg-dark {
@@ -432,6 +520,21 @@ body::after {
     border-radius: 12px;
     padding: 12px 18px;
     font-weight: 600;
+    transform: translate3d(0, 0, 0) scale(1);
+    transition:
+        transform 150ms ease,
+        box-shadow 150ms ease,
+        border-color 150ms ease,
+        background-color 150ms ease,
+        color 150ms ease;
+}
+
+.btn:not(:disabled):hover {
+    transform: translate3d(0, 0, 0) scale(1.03);
+}
+
+.btn:not(:disabled):active {
+    transform: translate3d(0, 0, 0) scale(0.97);
 }
 
 .btn-primary {
@@ -627,6 +730,34 @@ body::after {
 @media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
     .mouse-star-layer {
         display: none !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body::before,
+    body::after {
+        animation: none !important;
+    }
+
+    .reveal-init {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .project-card,
+    .project-card::after,
+    .project-card .tags,
+    .project-card .d-grid,
+    .btn {
+        transition: none !important;
+    }
+
+    .project-card:hover,
+    .project-card:focus-within,
+    .btn:hover,
+    .btn:active {
+        transform: none !important;
     }
 }
 

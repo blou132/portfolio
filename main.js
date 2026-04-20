@@ -27,6 +27,77 @@ if (mappedHash) {
 }
 
 // =========================================================
+// Animations d'entree au scroll (IntersectionObserver)
+// =========================================================
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const initScrollReveal = () => {
+    const revealTargets = new Set();
+    const addRevealTarget = (element, delayMs = 0) => {
+        if (!(element instanceof Element)) {
+            return;
+        }
+        element.classList.add('reveal-init');
+        element.style.setProperty('--reveal-delay', `${delayMs}ms`);
+        revealTargets.add(element);
+    };
+
+    // Hero: sequence courte pour un chargement premium.
+    const heroTargets = [
+        document.querySelector('.hero .hero-eyebrow'),
+        document.querySelector('.hero h1'),
+        document.querySelector('.hero .hero-lead'),
+        ...document.querySelectorAll('.hero .btn'),
+        document.querySelector('.hero .hero-meta'),
+        document.querySelector('.hero .hero-highlights'),
+    ];
+    heroTargets.forEach((target, index) => addRevealTarget(target, Math.min(index * 90, 280)));
+
+    // Sections principales.
+    document.querySelectorAll('.section-block').forEach((section) => addRevealTarget(section));
+    document.querySelectorAll('.section-header').forEach((sectionHeader) => addRevealTarget(sectionHeader, 60));
+
+    // Cartes projets avec effet stagger.
+    document.querySelectorAll('.project-card').forEach((card, index) => {
+        const stagger = (index % 4) * 90;
+        addRevealTarget(card, stagger);
+    });
+
+    // Elements de contenu complementaires.
+    document.querySelectorAll('.timeline-item, .skill-card, .contact-link').forEach((item, index) => {
+        addRevealTarget(item, (index % 4) * 80);
+    });
+
+    if (revealTargets.size === 0) {
+        return;
+    }
+
+    // Respect accessibilite motion-reduce et fallback si Observer indisponible.
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+        revealTargets.forEach((target) => target.classList.add('is-visible'));
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+                return;
+            }
+            entry.target.classList.add('is-visible');
+            currentObserver.unobserve(entry.target);
+        });
+    }, {
+        root: null,
+        threshold: 0.15,
+        rootMargin: '0px 0px -10% 0px',
+    });
+
+    revealTargets.forEach((target) => observer.observe(target));
+};
+
+initScrollReveal();
+
+// =========================================================
 // Formulaire de contact
 // =========================================================
 // Le formulaire envoie les données vers FormSubmit puis redirige vers une page de confirmation.
@@ -163,7 +234,6 @@ if (hasExternalResources() && !hasAcknowledgedCookieNotice()) {
 // Trainee "etoiles filantes" liée au mouvement de la souris (desktop uniquement).
 const supportsFinePointer = window.matchMedia('(pointer: fine)').matches;
 const supportsHover = window.matchMedia('(hover: hover)').matches;
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (supportsFinePointer && supportsHover && !prefersReducedMotion) {
     const starLayer = document.createElement('div');
     starLayer.className = 'mouse-star-layer';
