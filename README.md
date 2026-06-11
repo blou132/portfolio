@@ -43,7 +43,6 @@ Puis ouvrir :
 - `downloads/cv.pdf` : CV téléchargeable.
 - `projets/tpformula1/index.html` : page du projet TPFormula1.
 - `projets/site-artisan/index.html` : page du projet site artisan.
-- `projets/java-poo/index.html` : page du projet Java POO.
 - `legal/mentions-legales/index.html` : mentions légales.
 - `legal/politique-confidentialite/index.html` : politique de confidentialité.
 - `message-envoye/index.html` : page technique de confirmation après envoi du formulaire.
@@ -55,7 +54,6 @@ Puis ouvrir :
 - `/`
 - `/projets/tpformula1/`
 - `/projets/site-artisan/`
-- `/projets/java-poo/`
 - `/legal/mentions-legales/`
 - `/legal/politique-confidentialite/`
 
@@ -77,7 +75,7 @@ La route `/message-envoye/` existe pour la confirmation du formulaire, mais elle
 
 - TPFormula1 : `https://github.com/blou132/projet_bts1.git`
 - Projet 2 : `https://github.com/blou132/projet_bts2.git`
-- Cours : `https://github.com/blou132/cour.git`
+- JEUX : `https://github.com/blou132/JEUX`
 
 ## Vérification rapide
 
