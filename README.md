@@ -1,124 +1,87 @@
 # Portfolio
 
-Site portfolio statique (HTML, CSS, JS).
+Site portfolio statique en HTML, CSS et JavaScript pour un profil BTS SIO.
 
-## Prerequis
+## Prérequis
 
-- Un navigateur web (Chrome, Edge, Firefox, etc.)
-- Optionnel: Python 3 pour lancer un serveur local
-- Optionnel: Node.js (pour `npx serve`)
+- Un navigateur web récent.
+- Optionnel : Node.js pour lancer `npx serve`.
+- Optionnel : Python 3 pour lancer `python -m http.server`.
 
 ## Lancer le portfolio
 
-### Option 1 (rapide)
+### Serveur local recommandé
 
-1. Ouvre le dossier du projet.
-2. Double-clique sur `index.html`.
-
-### Option 2 (recommandee: serveur local)
-
-Dans PowerShell, depuis le dossier du projet:
+Depuis le dossier du projet :
 
 ```powershell
 npx serve .
 ```
 
-Puis ouvre:
+Puis ouvrir :
 
 `http://localhost:3000`
 
-Pour arreter le serveur: `Ctrl + C`
+### Alternative avec Python
 
-### Option 3 (alternative avec Python)
-
-Dans PowerShell, depuis le dossier du projet:
+Depuis le dossier du projet :
 
 ```powershell
 python -m http.server 5500
 ```
 
-Puis ouvre:
+Puis ouvrir :
 
 `http://localhost:5500`
 
-Pour arreter le serveur: `Ctrl + C`
+## Architecture
 
-## Structure du projet
+- `index.html` : page d'accueil du portfolio.
+- `assets/css/style.css` : styles globaux du site.
+- `assets/js/main.js` : interactions JavaScript du site.
+- `images/` : images utilisées par les pages.
+- `downloads/cv.pdf` : CV téléchargeable.
+- `projets/tpformula1/index.html` : page du projet TPFormula1.
+- `projets/site-artisan/index.html` : page du projet site artisan.
+- `projets/java-poo/index.html` : page du projet Java POO.
+- `legal/mentions-legales/index.html` : mentions légales.
+- `legal/politique-confidentialite/index.html` : politique de confidentialité.
+- `message-envoye/index.html` : page technique de confirmation après envoi du formulaire.
+- `robots.txt` : règles d'exploration.
+- `sitemap.xml` : URL indexables.
 
-- `index.html`: page principale
-- `projet-tpformula1/index.html`, `projet2/index.html`, `projet-java-poo/index.html`: pages de details projets (clean URL FR)
-- `projet1/index.html`, `projet3/index.html` + ancienne route du projet 2: routes conservees pour compatibilite
-- `projet1.html`, `projet2.html`, `projet3.html`: redirections vers les clean URLs
-- `mentions-legales.html`, `politique-confidentialite.html`: pages legales (RGPD)
-- `mentions-legales/index.html`, `politique-confidentialite/index.html`: redirections de compatibilite vers les pages legales racine
-- `message-envoye/index.html`: page de confirmation apres envoi du formulaire
-- `style.css`: styles globaux
-- `main.js`: interactions (theme, retour en haut, envoi du formulaire)
-- `images/`: logos et images
-- `downloads/cv.pdf`: CV telechargeable
+## Routes actives
 
-## Depots GitHub
+- `/`
+- `/projets/tpformula1/`
+- `/projets/site-artisan/`
+- `/projets/java-poo/`
+- `/legal/mentions-legales/`
+- `/legal/politique-confidentialite/`
 
-- TPFormula1: `https://github.com/blou132/projet_bts1.git`
-- Projet 2: `https://github.com/blou132/projet_bts2.git`
-- Cours: `https://github.com/blou132/cour.git`
+La route `/message-envoye/` existe pour la confirmation du formulaire, mais elle n'est pas incluse dans le sitemap.
 
-## Notes
+## Formulaire de contact
 
-- URLs propres activees:
-  - `http://localhost:3000/projet-tpformula1/`
-  - `http://localhost:3000/projet2/`
-  - `http://localhost:3000/projet-java-poo/`
-  - `http://localhost:3000/message-envoye/`
-- Ancres propres en francais:
-  - `http://localhost:3000/#a-propos`
-  - `http://localhost:3000/#parcours`
-  - `http://localhost:3000/#projets`
-  - `http://localhost:3000/#competences`
-- Le formulaire de contact envoie les messages vers `teo.champeval@gmail.com` via FormSubmit.
-- Apres soumission reussie, FormSubmit redirige vers la clean URL `message-envoye/`.
-- Si la page est ouverte en `file://` (double-clic sur `index.html`), le formulaire bascule automatiquement en `mailto` pour eviter l'erreur FormSubmit.
-- Les liens de footer incluent les pages `mentions-legales.html` et `politique-confidentialite.html`.
+- Le formulaire envoie les messages via FormSubmit.
+- Après une soumission réussie, l'utilisateur est redirigé vers `/message-envoye/`.
+- Si le site est ouvert en `file://`, le script bascule vers `mailto:` pour éviter une erreur liée à l'envoi externe.
 
-## RGPD / CNIL
+## Sécurité
 
-- Information RGPD visible au niveau du formulaire (`index.html`) avec:
-  - responsable de traitement
-  - finalite
-  - base legale (intérêt legitime)
-  - duree de conservation
-  - droits RGPD + contact
-- Politique de confidentialité détaillée:
-  - données traitées
-  - destinataires
-  - droits des personnes
-  - cookies et traceurs
-  - lien CNIL
-- Mentions legales reliées a la politique de confidentialité.
-- Les pages projets incluent aussi les liens vers les pages legales.
-- Banniere d'information cookies ajoutee (memoire locale de fermeture uniquement).
-- Section hébergeur structuree dans les mentions legales (bloc à compléter pour la production).
+- Les pages HTML définissent une CSP via balise `meta`.
+- Le site utilise des styles et scripts locaux pour son affichage.
+- Les liens externes doivent rester protégés avec `rel="noopener noreferrer"`.
 
-## Securite
+## Dépôts GitHub liés
 
-- Hardening applique sur toutes les pages HTML:
-  - CSP (`Content-Security-Policy`) via meta
-  - `Referrer-Policy` via meta
-  - Bootstrap CDN epingle avec `integrity` + `crossorigin`
-  - Liens externes en `rel="noopener noreferrer"`
-- Protection anti-spam basique ajoutee au formulaire (`_honey`) + limites de longueur sur les champs + filtre anti-chiffres sur le nom.
-- Fichier d'en-tetes pour hebergement statique: `_headers` (Netlify compatible), avec:
-  - CSP serveur
-  - `X-Content-Type-Options: nosniff`
-  - `X-Frame-Options: DENY`
-  - `Permissions-Policy`
-  - `Referrer-Policy`
-  - `Strict-Transport-Security`
+- TPFormula1 : `https://github.com/blou132/projet_bts1.git`
+- Projet 2 : `https://github.com/blou132/projet_bts2.git`
+- Cours : `https://github.com/blou132/cour.git`
 
-## Verification rapide
+## Vérification rapide
 
-1. Lance `npx serve .`
-2. Ouvre `http://localhost:3000`
-3. Verifie que les pages projets, le theme et les icones Bootstrap fonctionnent
-4. Ouvre la console navigateur: pas d'erreur CSP
-
+1. Lancer `npx serve .`.
+2. Ouvrir `http://localhost:3000`.
+3. Vérifier les routes actives listées dans ce README.
+4. Vérifier la console navigateur : aucune erreur CSP ou ressource manquante.

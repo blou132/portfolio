@@ -4,10 +4,40 @@
 // Affiche un bouton flottant des que la page est suffisamment scrollee.
 const backToTop = document.getElementById('back-to-top');
 if (backToTop) {
-    const toggleBackToTop = () => backToTop.classList.toggle('show', window.scrollY > 220);
-    window.addEventListener('scroll', toggleBackToTop);
     backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-    toggleBackToTop();
+
+    const hero = document.getElementById('top');
+    if (hero && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            backToTop.classList.toggle('show', !entries[0].isIntersecting);
+        }, {
+            rootMargin: '-220px 0px 0px 0px',
+            threshold: 0,
+        });
+        observer.observe(hero);
+    }
+}
+
+// =========================================================
+// Navigation mobile sans dependance Bootstrap JS
+// =========================================================
+const navbarToggle = document.querySelector('[data-bs-toggle="collapse"][data-bs-target]');
+if (navbarToggle) {
+    const targetSelector = navbarToggle.getAttribute('data-bs-target');
+    const navbarMenu = targetSelector ? document.querySelector(targetSelector) : null;
+    if (navbarMenu) {
+        navbarToggle.setAttribute('aria-expanded', 'false');
+        navbarToggle.addEventListener('click', () => {
+            const isOpen = navbarMenu.classList.toggle('show');
+            navbarToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+        navbarMenu.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                navbarMenu.classList.remove('show');
+                navbarToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
 }
 
 // =========================================================
@@ -42,18 +72,7 @@ const initScrollReveal = () => {
         revealTargets.add(element);
     };
 
-    // Hero: sequence courte pour un chargement premium.
-    const heroTargets = [
-        document.querySelector('.hero .hero-eyebrow'),
-        document.querySelector('.hero h1'),
-        document.querySelector('.hero .hero-lead'),
-        ...document.querySelectorAll('.hero .btn'),
-        document.querySelector('.hero .hero-meta'),
-        document.querySelector('.hero .hero-highlights'),
-    ];
-    heroTargets.forEach((target, index) => addRevealTarget(target, Math.min(index * 90, 280)));
-
-    // Sections principales.
+    // Sections principales hors hero: le contenu LCP reste visible immediatement.
     document.querySelectorAll('.section-block').forEach((section) => addRevealTarget(section));
     document.querySelectorAll('.section-header').forEach((sectionHeader) => addRevealTarget(sectionHeader, 60));
 
@@ -176,6 +195,14 @@ const hasExternalResources = () => {
     const selectors = 'script[src], link[href]';
     const resources = document.querySelectorAll(selectors);
     for (const resource of resources) {
+        if (resource.tagName === 'LINK') {
+            const rel = (resource.getAttribute('rel') || '').toLowerCase();
+            const isLoadedResource = /\b(stylesheet|preload|modulepreload|preconnect|dns-prefetch|icon)\b/.test(rel);
+            if (!isLoadedResource) {
+                continue;
+            }
+        }
+
         const source = resource.getAttribute('src') || resource.getAttribute('href');
         if (!source) {
             continue;
@@ -194,12 +221,12 @@ const hasExternalResources = () => {
 };
 const resolveSiteUrl = (targetFile) => {
     const mainScript = document.querySelector('script[src$="main.js"], script[src*="main.js?"]');
-    const baseUrl = mainScript?.src ? new URL('.', mainScript.src) : new URL('.', window.location.href);
+    const baseUrl = mainScript?.src ? new URL('../../', mainScript.src) : new URL('.', window.location.href);
     return new URL(targetFile, baseUrl).toString();
 };
 const createCookieNotice = () => {
-    const privacyUrl = resolveSiteUrl('politique-confidentialite.html');
-    const legalUrl = resolveSiteUrl('mentions-legales.html');
+    const privacyUrl = resolveSiteUrl('legal/politique-confidentialite/');
+    const legalUrl = resolveSiteUrl('legal/mentions-legales/');
     const notice = document.createElement('aside');
     notice.className = 'cookie-notice';
     notice.setAttribute('role', 'status');
@@ -227,39 +254,6 @@ const createCookieNotice = () => {
 if (hasExternalResources() && !hasAcknowledgedCookieNotice()) {
     createCookieNotice();
 }
-
-// =========================================================
-// Arriere-plan parallax (profondeur cosmique)
-// =========================================================
-const initCosmicParallax = () => {
-    const depthLayer = document.createElement('div');
-    depthLayer.className = 'cosmic-depth-layer';
-    depthLayer.setAttribute('aria-hidden', 'true');
-    document.body.prepend(depthLayer);
-
-    if (prefersReducedMotion) {
-        document.body.style.setProperty('--parallax-offset', '0px');
-        return;
-    }
-
-    let rafId = 0;
-    const updateOffset = () => {
-        rafId = 0;
-        document.body.style.setProperty('--parallax-offset', `${window.scrollY}px`);
-    };
-    const onScroll = () => {
-        if (rafId !== 0) {
-            return;
-        }
-        rafId = window.requestAnimationFrame(updateOffset);
-    };
-
-    updateOffset();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
-};
-
-initCosmicParallax();
 
 // =========================================================
 // Theme force (sombre)
