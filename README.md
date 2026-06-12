@@ -43,6 +43,7 @@ Puis ouvrir :
 - `downloads/cv.pdf` : CV téléchargeable.
 - `projets/tpformula1/index.html` : page du projet TPFormula1.
 - `projets/site-artisan/index.html` : page du projet site artisan.
+- `projets/jeux/index.html` : page du projet personnel JEUX.
 - `legal/mentions-legales/index.html` : mentions légales.
 - `legal/politique-confidentialite/index.html` : politique de confidentialité.
 - `message-envoye/index.html` : page technique de confirmation après envoi du formulaire.
@@ -54,6 +55,7 @@ Puis ouvrir :
 - `/`
 - `/projets/tpformula1/`
 - `/projets/site-artisan/`
+- `/projets/jeux/`
 - `/legal/mentions-legales/`
 - `/legal/politique-confidentialite/`
 

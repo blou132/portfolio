@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Meta de base + sécurité CSP pour la page projet. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self' data:; connect-src 'self'; form-action 'self' https://formsubmit.co; object-src 'none'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="description" content="JEUX: projet personnel de simulation évolutive et jeu expérimental 3D avec Godot 4, données JSON, tests Python et automatisation GitHub Actions.">
+    <meta name="robots" content="index, follow">
+    <title>JEUX - Projet personnel Godot 4 | Téo Champeval</title>
+    <link rel="canonical" href="https://teo-infra.fr/projets/jeux/">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="JEUX - Projet personnel Godot 4 | Téo Champeval">
+    <meta property="og:description" content="Prototype sandbox fantasy 3D orienté simulation évolutive, gameplay observable et systèmes expérimentaux.">
+    <meta property="og:url" content="https://teo-infra.fr/projets/jeux/">
+    <meta property="og:site_name" content="Portfolio Téo Champeval">
+    <meta property="og:image" content="https://teo-infra.fr/images/hero-bg-1200.jpg?v=20260611">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Ressources visuelles communes du portfolio. -->
+    <link rel="icon" href="../../images/favicon-v2.png?v=20260401" type="image/png">
+    <link rel="shortcut icon" href="/favicon.ico?v=20260401">
+    <link rel="stylesheet" href="../../assets/css/style.css?v=20260612">
+</head>
+<body class="theme-dark" data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="100" tabindex="0">
+<!-- Navigation commune vers la page d'accueil et les sections principales. -->
+<nav class="navbar navbar-expand-lg navbar-dark cosmic-nav fixed-top" id="site-nav">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Ouvrir le menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto text-center">
+                <li class="nav-item"><a class="nav-link" href="../../#a-propos">À propos</a></li>
+                <li class="nav-item"><a class="nav-link" href="../../#parcours">Parcours</a></li>
+                <li class="nav-item"><a class="nav-link" href="../../#projets">Projets</a></li>
+                <li class="nav-item"><a class="nav-link" href="../../#competences">Compétences</a></li>
+                <li class="nav-item"><a class="nav-link" href="../../#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="../../legal/mentions-legales/">Mentions légales</a></li>
+                <li class="nav-item"><a class="nav-link" href="../../legal/politique-confidentialite/">Confidentialité</a></li>
+                <li class="nav-item"><a class="nav-link" href="../../downloads/cv.pdf" target="_blank" rel="noopener noreferrer"><i class="bi bi-file-earmark-arrow-down"></i> CV</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Contenu détaillé du projet JEUX. -->
+<main class="section-block">
+    <div class="container">
+        <div class="section-header">
+            <p class="section-kicker">Projet personnel</p>
+            <h1 class="section-title">JEUX</h1>
+            <p class="section-desc">Projet personnel de simulation évolutive et de jeu expérimental, actuellement orienté prototype sandbox fantasy 3D avec Godot 4.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <article class="glass-card mb-4">
+                    <h2 class="card-heading">Objectif du projet</h2>
+                    <p>Construire un terrain d'expérimentation pour observer une boucle de simulation: agents autonomes, monstres, factions légères, événements de monde et interactions répétées dans un environnement 3D.</p>
+                    <h3 class="card-heading mt-4">Direction actuelle</h3>
+                    <ul class="mb-0">
+                        <li>Prototype Godot 4 actif dans le dossier <code>game3d/</code>.</li>
+                        <li>Scène principale sandbox 3D avec boucle de simulation observable.</li>
+                        <li>IA simple, combat, magie, régulation de population et événements de monde.</li>
+                        <li>Ancien simulateur Python conservé comme laboratoire sous <code>legacy_python/</code>.</li>
+                    </ul>
+                </article>
+
+                <article class="glass-card mb-4">
+                    <h2 class="card-heading">Architecture technique</h2>
+                    <ul class="mb-0">
+                        <li>Godot 4 pour le prototype 3D, les scènes et les scripts GDScript.</li>
+                        <li>Données de gameplay en JSON, synchronisées entre <code>shared_data/</code> et <code>game3d/data/</code>.</li>
+                        <li>Scripts Python pour les outils d'analyse, d'export et de validation.</li>
+                        <li>Exports de métriques en JSON, JSONL et CSV pour analyser les runs et le comportement de la simulation.</li>
+                        <li>Tests automatisés Python et workflow GitHub Actions pour les contrôles de non-régression.</li>
+                    </ul>
+                </article>
+
+                <article class="glass-card">
+                    <h2 class="card-heading">Apprentissages</h2>
+                    <ul class="mb-0">
+                        <li>Structurer un projet expérimental sans mélanger prototype, données et outils d'analyse.</li>
+                        <li>Observer des comportements émergents à partir de règles simples et bornées.</li>
+                        <li>Mettre en place des tests et rapports pour garder une simulation maintenable.</li>
+                        <li>Documenter les systèmes pour faciliter les itérations futures.</li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="col-lg-4">
+                <aside class="glass-card mb-4">
+                    <p class="text-uppercase small mb-2 text-muted">Stack</p>
+                    <div class="tags">
+                        <span>Godot 4</span><span>GDScript</span><span>Python</span><span>JSON</span>
+                    </div>
+                </aside>
+
+                <aside class="glass-card mb-4">
+                    <p class="text-uppercase small mb-2 text-muted">Contexte projet</p>
+                    <p class="mb-2 text-muted">Projet personnel, expérimental et évolutif.</p>
+                    <p class="mb-0 text-muted">Dépôt GitHub: <a href="https://github.com/blou132/JEUX" target="_blank" rel="noopener noreferrer">blou132/JEUX</a></p>
+                </aside>
+
+                <aside class="glass-card">
+                    <p class="text-uppercase small mb-2 text-muted">Points vérifiés</p>
+                    <ul class="mb-0 text-muted">
+                        <li>Projet Godot présent.</li>
+                        <li>Données JSON partagées.</li>
+                        <li>Tests Python et GitHub Actions.</li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+
+        <div class="mt-4 d-flex flex-wrap gap-2">
+            <a class="btn btn-primary" href="https://github.com/blou132/JEUX" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
+            <a class="btn btn-outline-light" href="../../#projets">Retour aux projets</a>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+        <p class="mb-0">&copy; 2026 Téo Champeval - Portfolio BTS SIO.</p>
+        <div class="footer-links d-flex align-items-center gap-3">
+            <a href="../../#top">Accueil</a>
+            <a href="../../legal/mentions-legales/">Mentions légales</a>
+            <a href="../../legal/politique-confidentialite/">Politique de confidentialité</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Retour rapide en haut + chargement des scripts. -->
+<button id="back-to-top" class="btn-to-top" type="button" aria-label="Retour en haut"><i class="bi bi-arrow-up"></i></button>
+
+<script src="../../assets/js/main.js?v=20260611" defer></script>
+</body>
+</html>
