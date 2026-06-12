@@ -41,6 +41,7 @@ h1 {
 }
 
 h2,
+h3,
 h5,
 h6 {
     margin-bottom: 0.5rem;
@@ -899,9 +900,19 @@ body::after {
     pointer-events: none;
 }
 
-.glass-card h5,
-.glass-card h6 {
+.card-heading,
+.skill-heading {
     color: #fff;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.card-heading {
+    font-size: 0.83em;
+}
+
+.skill-heading {
+    font-size: 0.67em;
 }
 
 .highlight-card {
@@ -1484,8 +1495,8 @@ body::after {
     opacity: 0.35;
 }
 
-.theme-light .glass-card h5,
-.theme-light .glass-card h6 {
+.theme-light .card-heading,
+.theme-light .skill-heading {
     color: #0f172a;
 }
 
