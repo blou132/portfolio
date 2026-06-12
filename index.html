@@ -31,7 +31,7 @@
     <link rel="preload" as="image" href="images/hero-bg-720.webp" type="image/webp" fetchpriority="high" media="(max-width: 768px)">
     <link rel="preload" as="image" href="images/hero-bg-1200.webp" type="image/webp" fetchpriority="high" media="(min-width: 769px)">
     <!-- Feuille de style principale du site. -->
-    <link rel="stylesheet" href="assets/css/style.css?v=20260612">
+    <link rel="stylesheet" href="assets/css/style.css?v=20260612-visual">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -116,23 +116,48 @@
         <img src="images/hero-bg-1200.jpg" srcset="images/hero-bg-720.jpg 720w, images/hero-bg-1200.jpg 1200w" sizes="100vw" width="1200" height="800" alt="" fetchpriority="high" decoding="async">
     </picture>
     <div class="container position-relative">
-        <p class="hero-eyebrow text-uppercase">BTS SIO SLAM - 2e année</p>
-        <h1>Portfolio de développeur</h1>
-        <p class="hero-lead">Étudiant en BTS SIO, je construis des applications PHP et Laravel orientées métier, avec une base SQL propre, une interface responsive et un intérêt fort pour la cybersécurité. Disponible pour stage et alternance.</p>
-        <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
-            <a class="btn btn-primary btn-projet" href="#projets"><i class="bi bi-rocket-takeoff me-2"></i>Voir mes projets</a>
-            <a class="btn btn-outline-light" href="#contact"><i class="bi bi-envelope me-2"></i>Me contacter</a>
-        </div>
-        <ul class="hero-meta list-inline mt-4 mb-4">
-            <li class="list-inline-item"><i class="bi bi-code-slash me-2"></i>TPFormula1 (PHP/MySQL)</li>
-            <li class="list-inline-item"><i class="bi bi-diagram-3 me-2"></i>Projet 2 (Laravel)</li>
-            <li class="list-inline-item"><i class="bi bi-shield-lock me-2"></i>Objectif Cybersécurité</li>
-        </ul>
-        <div class="hero-highlights">
-            <span class="highlight-pill"><i class="bi bi-folder2-open me-2"></i>3 projets presentes</span>
-            <span class="highlight-pill"><i class="bi bi-person-workspace me-2"></i>2 projets solo</span>
-            <span class="highlight-pill"><i class="bi bi-check2-circle me-2"></i>Approche pratique</span>
-            <span class="highlight-pill"><i class="bi bi-mortarboard me-2"></i>Licence puis Master Cyber</span>
+        <div class="hero-layout">
+            <div class="hero-copy">
+                <p class="hero-eyebrow text-uppercase">BTS SIO SLAM - 2e année</p>
+                <h1>Portfolio de développeur</h1>
+                <p class="hero-lead">Étudiant en BTS SIO, je construis des applications PHP et Laravel orientées métier, avec une base SQL propre, une interface responsive et un intérêt fort pour la cybersécurité. Disponible pour stage et alternance.</p>
+                <div class="hero-actions d-flex justify-content-center gap-3 mt-4 flex-wrap">
+                    <a class="btn btn-primary btn-projet" href="#projets"><i class="bi bi-rocket-takeoff me-2"></i>Voir mes projets</a>
+                    <a class="btn btn-outline-light" href="#contact"><i class="bi bi-envelope me-2"></i>Me contacter</a>
+                </div>
+                <ul class="hero-meta list-inline mt-4 mb-4">
+                    <li class="list-inline-item"><i class="bi bi-code-slash me-2"></i>TPFormula1 (PHP/MySQL)</li>
+                    <li class="list-inline-item"><i class="bi bi-diagram-3 me-2"></i>Projet 2 (Laravel)</li>
+                    <li class="list-inline-item"><i class="bi bi-shield-lock me-2"></i>Objectif cybersécurité</li>
+                </ul>
+                <div class="hero-highlights">
+                    <span class="highlight-pill"><i class="bi bi-folder2-open me-2"></i>3 projets présentés</span>
+                    <span class="highlight-pill"><i class="bi bi-person-workspace me-2"></i>2 projets solo</span>
+                    <span class="highlight-pill"><i class="bi bi-check2-circle me-2"></i>Approche pratique</span>
+                    <span class="highlight-pill"><i class="bi bi-mortarboard me-2"></i>Licence puis Master Cyber</span>
+                </div>
+            </div>
+            <aside class="hero-panel" aria-label="Résumé du profil">
+                <p class="hero-panel-kicker">Profil synthèse</p>
+                <div class="hero-panel-grid">
+                    <div class="hero-panel-item">
+                        <span class="hero-panel-value">BTS SIO</span>
+                        <span class="hero-panel-label">Option SLAM</span>
+                    </div>
+                    <div class="hero-panel-item">
+                        <span class="hero-panel-value">3</span>
+                        <span class="hero-panel-label">Projets présentés</span>
+                    </div>
+                    <div class="hero-panel-item">
+                        <span class="hero-panel-value">Cyber</span>
+                        <span class="hero-panel-label">Objectif d'études</span>
+                    </div>
+                    <div class="hero-panel-item">
+                        <span class="hero-panel-value">Stage</span>
+                        <span class="hero-panel-label">Alternance visée</span>
+                    </div>
+                </div>
+            </aside>
         </div>
     </div>
 </header>
@@ -223,8 +248,8 @@
         <div class="container">
             <div class="section-header">
                 <p class="section-kicker">Projets</p>
-                <h2 class="section-title">Trois projets representatifs</h2>
-                <p class="section-desc">Selection manuelle des projets les plus representatifs de mon parcours.</p>
+                <h2 class="section-title">Trois projets représentatifs</h2>
+                <p class="section-desc">Sélection manuelle des projets les plus représentatifs de mon parcours.</p>
             </div>
             <div class="row g-4 justify-content-center">
                 <div class="col-md-6 col-lg-4">
@@ -241,7 +266,7 @@
                         <div class="d-grid gap-2">
                             <a href="projets/tpformula1/" class="btn btn-primary w-100" aria-label="Voir la page du projet TPFormula1">Voir le projet</a>
                             <a href="https://projet-bts1.teo-infra.fr/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light w-100" aria-label="Voir TPFormula1 en ligne">Voir en ligne</a>
-                            <a href="https://github.com/blou132/projet_bts1" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light w-100" aria-label="Voir le dépôt GitHub du projet TPFormula1">Depot GitHub</a>
+                            <a href="https://github.com/blou132/projet_bts1" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light w-100" aria-label="Voir le dépôt GitHub du projet TPFormula1">Dépôt GitHub</a>
                         </div>
                     </article>
                 </div>
@@ -259,7 +284,7 @@
                         <div class="d-grid gap-2">
                             <a href="projets/site-artisan/" class="btn btn-primary w-100" aria-label="Voir la page du projet site artisan">Voir le projet</a>
                             <a href="https://projet-bts2.teo-infra.fr/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light w-100" aria-label="Voir le projet site artisan en ligne">Voir en ligne</a>
-                            <a href="https://github.com/blou132/projet_bts2" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light w-100" aria-label="Voir le dépôt GitHub du projet site artisan">Depot GitHub</a>
+                            <a href="https://github.com/blou132/projet_bts2" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light w-100" aria-label="Voir le dépôt GitHub du projet site artisan">Dépôt GitHub</a>
                         </div>
                     </article>
                 </div>
